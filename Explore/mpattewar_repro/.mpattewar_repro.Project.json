@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "1vwaSCyJx6XlzdCBLGRyUT",
+    "name" : "mpattewar_repro",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-05-21T17:17:34.062Z",
+  "objectRefs" : [ ]
+}
