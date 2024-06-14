@@ -1,0 +1,712 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Daaa-gt-2272454-2024-04-08T07:11:25.469Z::tf.xml</types1:EntryId>
+      <types1:Name>04644727</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mpattewar</types1:CreatedBy>
+      <types1:CreationDate>2024-04-08T07:11:25Z</types1:CreationDate>
+      <types1:ModifiedBy>mpattewar</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-08T07:45:50Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mpattewar</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-08T07:45:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf._04644727/_04644727.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="04644727"
+                   name="04644727"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Command Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 2" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 3" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 4" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 5" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 6" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 7" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 8" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 9" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 10" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 11" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Command Task 12" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j3wg4fhg" targetId="j3wg4fhf"/>
+               </start>
+               <container id="j3wg4fhf" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="j3wg4fhj">
+                     <eventContainer id="luqmcxbb">
+                        <service id="luqm5f1a">
+                           <title>Command Task 1</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 1</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 1/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 1/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 1/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 1/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 1/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 1/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 1/fault"
+                                  id="luqmcxba"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="j3wg4fhk" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="j3wg4fhm">
+                     <eventContainer id="luqmcxcb">
+                        <service id="luqm5f3n">
+                           <title>Command Task 2</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 2</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 2</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 2/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 2/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 2/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 2/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 2/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 2/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 2/fault"
+                                  id="luqmcxca"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="j3wg4fhn" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcx93">
+                     <eventContainer id="luqmcxa8">
+                        <service id="luqmcx9a">
+                           <title>Command Task 3</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 3</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 3</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 3/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 3/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 3/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 3/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 3/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 3/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 3/fault"
+                                  id="luqmcxa7"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcx94" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxd0">
+                     <eventContainer id="luqmcxh8">
+                        <service id="luqmcxdp">
+                           <title>Command Task 4</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 4</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 4</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 4/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 4/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 4/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 4/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 4/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 4/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 4/fault"
+                                  id="luqmcxh7"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxd1" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxd7">
+                     <eventContainer id="luqmcxie">
+                        <service id="luqmcxer">
+                           <title>Command Task 5</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 5</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 5</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 5/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 5/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 5/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 5/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 5/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 5/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 5/fault"
+                                  id="luqmcxid"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxd8" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxdf">
+                     <eventContainer id="luqmcxjk">
+                        <service id="luqmcxft">
+                           <title>Command Task 6</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 6</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 6</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 6/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 6/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 6/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 6/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 6/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 6/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 6/fault"
+                                  id="luqmcxjj"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxdg" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxki">
+                     <eventContainer id="luqmcxnt">
+                        <service id="luqmcxmm">
+                           <title>Command Task 7</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 7</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 7</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 7/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 7/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 7/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 7/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 7/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 7/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 7/fault"
+                                  id="luqmcxns"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxkj" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxks">
+                     <eventContainer id="luqmcxqh">
+                        <service id="luqmcxpa">
+                           <title>Command Task 8</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 8</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 8</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 8/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 8/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 8/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 8/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 8/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 8/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 8/fault"
+                                  id="luqmcxqg"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxkt" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcxl3">
+                     <eventContainer id="luqmcxst">
+                        <service id="luqmcxrm">
+                           <title>Command Task 9</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 9</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 9</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 9/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 9/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 9/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 9/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 9/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 9/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 9/fault"
+                                  id="luqmcxss"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcxl4" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcygl">
+                     <eventContainer id="luqmcyiy">
+                        <service id="luqmcyhs">
+                           <title>Command Task 10</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 10</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 10</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 10/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 10/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 10/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 10/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 10/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 10/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 10/fault"
+                                  id="luqmcyix"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcygm" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcygy">
+                     <eventContainer id="luqmcylm">
+                        <service id="luqmcykf">
+                           <title>Command Task 11</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 11</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 11</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 11/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 11/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 11/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 11/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 11/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 11/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 11/fault"
+                                  id="luqmcyll"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcygz" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <flow id="luqmcyhc">
+                     <eventContainer id="luqmcyoa">
+                        <service id="luqmcyn3">
+                           <title>Command Task 12</title>
+                           <serviceName>ICSExecuteCommandTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Task Name" source="constant">Command Task 12</parameter>
+                              <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                              <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                              <parameter name="Max Wait" source="constant">86400</parameter>
+                              <parameter name="Script Name" source="constant"/>
+                              <parameter name="Input Arguments" source="constant"/>
+                              <parameter name="Work Directory" source="constant"/>
+                              <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                              <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="INFA-commandTask">temp.Command Task 12</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                                 <operation source="constant"
+                                            to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                                 <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Command Task 12/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Command Task 12/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Command Task 12/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Command Task 12/output/Exit_Code">Exit Code</operation>
+                              <operation source="field" to="temp.Command Task 12/output/Execution_Status">Execution Status</operation>
+                              <operation source="field" to="temp.Command Task 12/output/Std_Error">Std Error</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Command Task 12/fault"
+                                  id="luqmcyo9"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                        </events>
+                     </eventContainer>
+                     <link id="luqmcyhd" targetId="j3wg4fhf" type="containerLink"/>
+                  </flow>
+                  <link id="j3wg4fhi" targetId="j3wg4fhj" type="containerLink"/>
+                  <link id="j3wg4fhl" targetId="j3wg4fhm" type="containerLink"/>
+                  <link id="luqmcx92" targetId="luqmcx93" type="containerLink"/>
+                  <link id="luqmcxcz" targetId="luqmcxd0" type="containerLink"/>
+                  <link id="luqmcxd6" targetId="luqmcxd7" type="containerLink"/>
+                  <link id="luqmcxde" targetId="luqmcxdf" type="containerLink"/>
+                  <link id="luqmcxkh" targetId="luqmcxki" type="containerLink"/>
+                  <link id="luqmcxkr" targetId="luqmcxks" type="containerLink"/>
+                  <link id="luqmcxl2" targetId="luqmcxl3" type="containerLink"/>
+                  <link id="luqmcygk" targetId="luqmcygl" type="containerLink"/>
+                  <link id="luqmcygx" targetId="luqmcygy" type="containerLink"/>
+                  <link id="luqmcyhb" targetId="luqmcyhc" type="containerLink"/>
+                  <link id="j3wg4fhh" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4GNTsvmaSyNlWn3dN72I8d</types1:GUID>
+      <types1:DisplayName>04644727</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-06-14T11:38:52.023Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

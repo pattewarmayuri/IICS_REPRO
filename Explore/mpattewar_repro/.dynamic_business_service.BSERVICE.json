@@ -1,0 +1,51 @@
+{
+  "objectInfo" : {
+    "id" : "1UAoSqTLaWjjhp4AXOyQWM",
+    "name" : "dynamic_business_service",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H42700000000001N"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "0100H42800000000002J",
+        "value" : "1UAoSqTLaWjjhp4AXOyQWM@dynamic_business_service"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-06-14T11:38:59.041Z",
+  "objectRefs" : [ {
+    "id" : "jHlk2FzH5Exf9HzMHivvqV",
+    "name" : "dynamic_business_service",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H40B0000000000U8"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

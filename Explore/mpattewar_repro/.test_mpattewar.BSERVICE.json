@@ -1,0 +1,51 @@
+{
+  "objectInfo" : {
+    "id" : "8q6hCaLkxDse7PvkR8BgOR",
+    "name" : "test_mpattewar",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H42700000000001S"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "0100H42800000000002O",
+        "value" : "8q6hCaLkxDse7PvkR8BgOR@Daiichi_token_repro"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-06-14T11:38:59.031Z",
+  "objectRefs" : [ {
+    "id" : "hXYpgxKVlYQgKd13YOG1we",
+    "name" : "Daiichi_token_repro",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H40B0000000000UB"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

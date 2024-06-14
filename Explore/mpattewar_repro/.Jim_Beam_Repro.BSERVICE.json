@@ -1,0 +1,51 @@
+{
+  "objectInfo" : {
+    "id" : "ibtNVbEKu2Nbm8doL1wc8h",
+    "name" : "Jim_Beam_Repro",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H42700000000001T"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "0100H42800000000002P",
+        "value" : "ibtNVbEKu2Nbm8doL1wc8h@Jim_Beam_Repro"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-06-14T11:38:59.035Z",
+  "objectRefs" : [ {
+    "id" : "93o3gQRgfXkkjhL1rq7vU6",
+    "name" : "Jim_Beam_Repro",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H40B0000000000W7"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

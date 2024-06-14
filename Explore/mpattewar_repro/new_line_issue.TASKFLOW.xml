@@ -1,0 +1,135 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>T8SOlA1vyoY2G7Q-gt-49930197-2024-04-05T09:38:51.741Z::tf.xml</types1:EntryId>
+      <types1:Name>new_line_issue</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mpattewar</types1:CreatedBy>
+      <types1:CreationDate>2024-04-05T09:38:52Z</types1:CreationDate>
+      <types1:ModifiedBy>mpattewar</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-19T09:32:30Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mpattewar</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-19T09:32:37Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.new_line_issue/new_line_issue.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="new_line_issue"
+                   name="new_line_issue"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="test" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="Command Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lumgyyy5" targetId="lumgyyy4"/>
+               </start>
+               <assignment id="lumgyyy4">
+                  <title>Assignment 1</title>
+                  <operation source="constant" to="input.test">"mt_OpsFlex_AMIC_SalesOrg_LOV","0","0","53","0","WRT_8229 Database errors occurred: FnName: Execute -- [Informatica][ODBC Oracle Wire Protocol driver][Oracle]ORA-01400: cannot insert NULL into ("AMPLUS"."LU_SLS_ORG"."SLS_ORG_NM") FnName: Execute -- [DataDirect][ODBC lib] Function sequence error","3","05-Apr-24 06.07.37","05-Apr-24 06.07.41","tf_OpsFlex_AMIC_SalesOrg_LOV","01C4J00Z000000000A68","960782660402556928","29"</operation>
+                  <link id="lumgyyy6" targetId="lumgyywq"/>
+               </assignment>
+               <eventContainer id="lumgyywq">
+                  <service id="lumgyyv0">
+                     <title>Command Task 1</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Command Task 1</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">0100H42500000000004N:1_1_Mayuri_Linux_02</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">9tOVNvG82ongbDCPwa7OIv</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.Command Task 1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/home/mpattewar/script.sh</operation>
+                           <operation source="formula" to="INFA-commandTask/input[1]/script-1/inputArguments">
+                              <expression language="XQuery">fn:normalize-space(fn:replace($input.test , '([^,])"', '$1\\"')) or fn:normalize-space(fn:replace($input.test , ',"([^,])', '",\\1'))</expression>
+                           </operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Command Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Command Task 1/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lumgyyv2" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Command Task 1/fault"
+                            id="lumgyywp"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>5k90ZG1GTmBehi5wVC4D40</types1:GUID>
+      <types1:DisplayName>new_line_issue</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-06-14T11:38:51.993Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

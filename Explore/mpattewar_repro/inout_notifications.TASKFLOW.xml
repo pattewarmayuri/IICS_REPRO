@@ -1,0 +1,162 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1WLU6S6fPAreFRq-gt-5612554-2024-04-10T16:13:24.84Z::tf.xml</types1:EntryId>
+      <types1:Name>inout_notifications</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mpattewar</types1:CreatedBy>
+      <types1:CreationDate>2024-04-10T16:13:25Z</types1:CreationDate>
+      <types1:ModifiedBy>mpattewar</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-12T06:37:40Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mpattewar</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-12T06:38:00Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.inout_notifications/inout_notifications.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="inout_notifications"
+                   name="inout_notifications"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:inout-notification</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="luu0cs9x" targetId="luu0csam"/>
+               </start>
+               <eventContainer id="luu0csam">
+                  <service id="luu0cs9w">
+                     <title>Data Task 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">inout_notification</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">gAj2rDgHbYMc5h1GIBysAk</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="inout-notification">temp.Data Task 1</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 1/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Data Task 1/inout/email">email</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="luwakq4f" targetId="luwakq4e"/>
+                  <events>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="luu0csak"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="luu0csal"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <assignment id="luwakq4e">
+                  <title>Assignment 1</title>
+                  <operation source="constant" to="temp.Data Task 1[1]/inout[1]/email">mpattewar@informatica.com</operation>
+                  <link id="luwakq4g" targetId="luu0csb9"/>
+               </assignment>
+               <service id="luu0csb9">
+                  <title>Notification Task 1</title>
+                  <serviceName>emailNotificationService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Email To" source="constant">{$temp.DataTask1[1]/inout[1]/email}</parameter>
+                     <parameter name="Email Cc" source="constant">{$temp.DataTask1[1]/inout[1]/email}</parameter>
+                     <parameter name="Email Bcc" source="constant"/>
+                     <parameter name="Email Subject" source="constant">esrdfghjkl</parameter>
+                     <parameter name="Email Content Type" source="constant">text</parameter>
+                     <parameter name="Email Body" source="constant">&lt;p&gt;xfcghjbknlm;,.&lt;/p&gt;</parameter>
+                  </serviceInput>
+                  <serviceOutput/>
+                  <link id="luu0csbb" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="inout-notification"
+                              isByCopy="true"
+                              name="inout-notification">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>ayJOSa6WsGteuDI16fTJCl</types1:GUID>
+      <types1:DisplayName>inout_notifications</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-06-14T11:38:56.619Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

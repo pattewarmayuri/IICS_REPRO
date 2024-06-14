@@ -1,0 +1,73 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>nbdoEFsWTzIf6ri-gt-3971130-2024-04-24T09:10:56.224Z::pd.xml</types1:EntryId>
+      <types1:Name>Process1-11</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mpattewar</types1:CreatedBy>
+      <types1:CreationDate>2024-04-24T09:10:56Z</types1:CreationDate>
+      <types1:ModifiedBy>mpattewar</types1:ModifiedBy>
+      <types1:ModificationDate>2024-04-24T09:19:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mpattewar</types1:PublishedBy>
+      <types1:PublicationDate>2024-04-24T09:21:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Process1-11/Process1-11.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Process1"
+                  name="Process1-11"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="untitled1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lvdlfql8" targetId="c"/>
+               </start>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>dbf56508-282e-4e9a-b3ad-4567e7a5d58c</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>mpattewar</ns1:CreatedBy>
+               <ns1:CreationDate>2024-04-24T09:18:49Z</ns1:CreationDate>
+               <ns1:ModifiedBy>mpattewar</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-04-24T09:18:49Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "untitled1": "100"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>a0bqarI5KuubTAT097E9EZ</types1:GUID>
+      <types1:DisplayName>Process1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-06-14T11:38:52.02Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

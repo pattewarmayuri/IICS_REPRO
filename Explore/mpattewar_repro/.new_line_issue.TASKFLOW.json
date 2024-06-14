@@ -1,0 +1,45 @@
+{
+  "objectInfo" : {
+    "id" : "5k90ZG1GTmBehi5wVC4D40",
+    "name" : "new_line_issue",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "T8SOlA1vyoY2G7Q-gt-49930197-2024-04-05T09:38:51.741Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-06-14T11:38:59.034Z",
+  "objectRefs" : [ {
+    "id" : "9tOVNvG82ongbDCPwa7OIv",
+    "name" : "1_1_Mayuri_Linux_02",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H42500000000004N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}
