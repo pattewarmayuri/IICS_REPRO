@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "euNWegTbzgrbY1y5bQExcX",
+    "name" : "mpattewar",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-09-20T08:42:17.293Z",
+  "objectRefs" : [ ]
+}
