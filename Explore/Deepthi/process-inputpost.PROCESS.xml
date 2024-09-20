@@ -1,0 +1,80 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hOeCFk4AdypKwKB-gt-10040430-2024-08-27T09:48:40.128Z::pd.xml</types1:EntryId>
+      <types1:Name>process-inputpost</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mpattewar</types1:CreatedBy>
+      <types1:CreationDate>2024-08-27T09:48:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mpattewar</types1:PublishedBy>
+      <types1:PublicationDate>2024-08-27T09:48:43Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.process-inputpost/process-inputpost.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="process-inputpost"
+                  name="process-inputpost"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="test" required="false" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="output" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="qb631d4f1-a2c1-4dfa-96be-60feaed12c2f">
+               <start id="kc9d59ac6-eabb-4338-beca-05b55a8f05bc">
+                  <link id="oc009271a-a892-40fe-9ef6-f6d5f45159f3"
+                        targetId="Assignment30671e1e-703c-414d-9dd9-17c1e0dcd203"/>
+               </start>
+               <assignment id="Assignment30671e1e-703c-414d-9dd9-17c1e0dcd203">
+                  <title>Assignment to output</title>
+                  <operation source="field" to="output.output">input.test</operation>
+                  <link id="nd159f59b-a158-4098-9012-4a5a85cd2baf"
+                        targetId="end-w5af1b794-46e4-4736-b067-a9d68ea88d78"/>
+               </assignment>
+               <end id="end-w5af1b794-46e4-4736-b067-a9d68ea88d78">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>5vXO000V92TggimkigtMqZ</types1:GUID>
+      <types1:DisplayName>process-inputpost</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-09-20T08:45:23.956Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

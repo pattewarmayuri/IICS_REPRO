@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "5vXO000V92TggimkigtMqZ",
+    "name" : "process-inputpost",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hOeCFk4AdypKwKB-gt-10040430-2024-08-27T09:48:40.128Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-09-20T08:45:24.318Z",
+  "objectRefs" : [ ]
+}
