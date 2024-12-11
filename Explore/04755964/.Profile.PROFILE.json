@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "8Q9ueuFokYvfubNrnERWeP",
+    "name" : "Profile",
+    "type" : "PROFILE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "870b3324-e27a-42b8-96e7-25caa31d720f"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "json",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-12-11T07:09:43.255Z",
+  "objectRefs" : [ {
+    "id" : "iApchOJSwYocME1B6en54K",
+    "name" : "mauer_snowflake_04755964",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100H40B0000000001AT"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "4OIo0L80Bqfe13ArpAWa8l",
+    "name" : "Rule_Spec_v1",
+    "type" : "RULE_SPECIFICATION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "4OIo0L80Bqfe13ArpAWa8l"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/045755964"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
