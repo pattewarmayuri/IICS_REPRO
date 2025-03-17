@@ -1,0 +1,240 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Vm5Y6tMFyglsO7R-gt-206827-2024-11-27T11:41:25.769Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_AWS_Dynamic_Test</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>Rahul_pandey</types1:CreatedBy>
+      <types1:CreationDate>2024-11-27T11:41:26Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>Rahul_pandey</types1:PublishedBy>
+      <types1:PublicationDate>2024-11-27T11:41:37Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_AWS_Dynamic_Test/tf_AWS_Dynamic_Test.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_AWS_Dynamic_Test"
+                   name="tf_AWS_Dynamic_Test"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-ORACLE-TO-AWS-8qda5dBTRyzb7gfVuiVC80</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 2" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-AWSS3-TO-CSV-eF0eOZvxSQJkS40vE9I6wo</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m3ztbv4p" targetId="m3ztbv5j"/>
+               </start>
+               <eventContainer id="m3ztbv5j">
+                  <service id="m3ztbv4o">
+                     <title>Data Task 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_ORACLE_TO_AWS</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">8qda5dBTRyzb7gfVuiVC80</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-ORACLE-TO-AWS-8qda5dBTRyzb7gfVuiVC80">temp.Data Task 1</operation>
+                           <operation source="constant"
+                                      to="mt-ORACLE-TO-AWS-8qda5dBTRyzb7gfVuiVC80/input[1]/target[1]/Target[1]/object"/>
+                           <operation source="constant"
+                                      to="temp.Data Task 1[1]/input[1]/target[1]/Target[1]/object"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 1/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m3ztbv4v" targetId="m3ztbv6o"/>
+                  <events>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="m3ztbv5h"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="m3ztbv5i"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m3ztbv6o">
+                  <service id="m3ztbv4u">
+                     <title>Data Task 2</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_AWSS3_TO_CSV</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">eF0eOZvxSQJkS40vE9I6wo</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-AWSS3-TO-CSV-eF0eOZvxSQJkS40vE9I6wo">temp.Data Task 2</operation>
+                           <operation source="constant"
+                                      to="mt-AWSS3-TO-CSV-eF0eOZvxSQJkS40vE9I6wo/input[1]/source[1]/Source[1]/object"/>
+                           <operation source="constant"
+                                      to="temp.Data Task 2[1]/input[1]/source[1]/Source[1]/object"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 2/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 2/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 2/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Data Task 2/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Data Task 2/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m3ztbv4w" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Data Task 2/fault"
+                            id="m3ztbv6m"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 2/fault"
+                            id="m3ztbv6n"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-ORACLE-TO-AWS-8qda5dBTRyzb7gfVuiVC80"
+                              isByCopy="true"
+                              name="mt-ORACLE-TO-AWS-8qda5dBTRyzb7gfVuiVC80">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-AWSS3-TO-CSV-eF0eOZvxSQJkS40vE9I6wo"
+                              isByCopy="true"
+                              name="mt-AWSS3-TO-CSV-eF0eOZvxSQJkS40vE9I6wo">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>l7fJz0qWAUzgGe7Q9wq4Qj</types1:GUID>
+      <types1:DisplayName>tf_AWS_Dynamic_Test</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-03-17T06:36:36.83Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
