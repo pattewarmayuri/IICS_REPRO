@@ -14,18 +14,16 @@
     "name" : "cr_s3",
     "connId" : "015ZHE0B0000000001VA"
   },
-  "lastModified" : 1753437135000,
+  "lastModified" : 1753872486000,
   "sourceOptions" : {
-    "dateFilterType" : "Greater than or Equal",
-    "fileDateFilter" : "true",
-    "lastModifiedDate" : "2025-07-25 15:21:42",
     "downloadPartSize" : "50",
     "multipartDownloadThreshold" : "100",
-    "timezone" : "America/Los_Angeles",
-    "filePickupOption" : "PATTERN",
+    "src.file.pickup.file.list" : "a,b,c",
+    "filePickupOption" : "FILELIST",
+    "srcPushdownCopy" : "false",
     "acclerationAction" : "DISABLED",
-    "filePatternFilter" : "false",
     "encryption" : "None",
+    "src.file.pickup.by.name" : "LISTOFFILES",
     "src.file.delete" : "KEEP",
     "batchSize" : "5",
     "fileStability" : "false",
@@ -41,12 +39,12 @@
     "s3Location" : "infagcs/cr_test_s3/"
   },
   "agentGroup" : "015ZHE250000000000B6",
-  "filePickupOption" : "PATTERN",
+  "filePickupOption" : "FILELIST",
   "threadCount" : 1,
   "logLevel" : "NORMAL",
   "allowConcurrency" : false,
   "identifier" : "99263",
   "fileListenerAsSource" : false,
   "fileListenerAsTrigger" : false,
-  "vcsExportTime" : "2025-07-25 02:53:46 PDT"
+  "vcsExportTime" : "2025-07-30 03:48:22 PDT"
 }
