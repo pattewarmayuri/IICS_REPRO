@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "7iG6C1ORgckdiI1wRfjyAg",
+    "name" : "Overriding_field_mapping",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xeLeG3vASaaaaa-gt-191484-2025-02-25T06:27:22.375Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-09-24T07:27:05.292Z",
+  "objectRefs" : [ {
+    "id" : "9fTs8pgD8EXbgajhs4z5C0",
+    "name" : "Overriding_field_mapping",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0Z0000000004W2"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/mpattewar"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
