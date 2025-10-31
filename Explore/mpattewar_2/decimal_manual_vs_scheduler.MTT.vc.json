@@ -1,0 +1,199 @@
+{
+  "name" : "decimal_manual_vs_scheduler",
+  "runtimeEnvironmentId" : "@5dffDbOOI5DblXRwAWecCM",
+  "runtimeEnvironmentName" : "_1_1_1_Mayuri_Linux_01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Source$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Source",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "Source"
+      },
+      "sourceConnectionId" : "@2A1WY95yfcXcz0TZJIVDwD",
+      "connectionName" : "inpattewar01_Oracla_INGKDBORA19C",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "DECIMAL_MANUAL_VS_SCHEDULER",
+          "label" : "DECIMAL_MANUAL_VS_SCHEDULER",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "DECIMAL_MANUAL_VS_SCHEDULER",
+            "label" : "DECIMAL_MANUAL_VS_SCHEDULER",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Target1$",
+      "type" : "TARGET",
+      "label" : "Target1",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objlabel" : "target_obj",
+        "objectParameterized" : "true",
+        "objectParamName" : "target_obj",
+        "objectParamType-mapping" : "DataObject",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "fieldMappingParameterized" : "true",
+        "supportApplyDDLChanges" : "false",
+        "originalPath" : "Target1"
+      },
+      "targetConnectionId" : "@2A1WY95yfcXcz0TZJIVDwD",
+      "connectionName" : "inpattewar01_Oracla_INGKDBORA19C",
+      "targetObject" : "DECIMAL_MANUAL_VS_SCHEDULER_PARAMETER_TARGET",
+      "targetObjectLabel" : "DECIMAL_MANUAL_VS_SCHEDULER_PARAMETER_TARGET",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "DECIMAL_MANUAL_VS_SCHEDULER_PARAMETER_TARGET",
+      "objectLabel" : "DECIMAL_MANUAL_VS_SCHEDULER_PARAMETER_TARGET",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "overriddenFields" : [
+        {
+          "name" : "CARTON_WEIGHT",
+          "type" : "decimal",
+          "precision" : 15,
+          "scale" : 2
+        }
+      ],
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "objectParameterName" : "target_obj",
+        "objectDefaultValue" : "DECIMAL_MANUAL_VS_SCHEDULER_PARAMETER_TARGET",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : true
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$mapping$",
+      "type" : "STRING",
+      "text" : "decimal (15, 2) CARTON_WEIGHT=exp_carton_weight;",
+      "label" : "mapping",
+      "uiProperties" : {
+        "paramName" : "mapping",
+        "paramType-mapping" : "FieldMapping",
+        "paramtype" : "Fieldmap",
+        "supressFieldmappingSuffix" : "true",
+        "lefttitle" : "Incoming Fields",
+        "righttitle" : "Target Fields",
+        "isPwxMultiGroupFieldMapping" : "false",
+        "objlabel" : "Target Field Group:",
+        "originalPath" : "Target1"
+      },
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1738656474000,
+  "mappingId" : "@8h2olUIg7OmcFNRUV9Qnch",
+  "mappingTemplateName" : "decimal_manual_vs_scheduler",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Fallback Option",
+      "value" : "Partial PDO"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-10-31 11:58:09 IST"
+}
