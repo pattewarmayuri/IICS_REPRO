@@ -1,8 +1,8 @@
 {
   "objectInfo" : {
-    "id" : "8jAXRBnO4Q1fyxyqgT7sw9",
-    "name" : "mpattewar",
-    "type" : "Project",
+    "id" : "19EbM5GDS5Clye5NzEoGKH",
+    "name" : "EDW_ODS_DDS",
+    "type" : "Folder",
     "metadata" : {
       "modelVersion" : {
         "major" : 0,
@@ -11,16 +11,14 @@
       "repoInfo" : null,
       "contextAttributes" : [ ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "Created for  DDS data on 3rd APR 2014",
         "contentType" : "Binary",
         "documentState" : "COMPLETE"
       }
     }
   },
   "dataFileExtension" : "json",
-  "updateTime" : "2025-02-07T09:18:15.882Z",
-=======
-  "updateTime" : "2025-09-24T08:48:35.909Z",
+  "updateTime" : "2026-07-28T11:26:28.427Z",
   "objectRefs" : [ ],
   "readableFileExtension" : null,
   "readableFilePresent" : false

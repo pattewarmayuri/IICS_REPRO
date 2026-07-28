@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "l7fJz0qWAUzgGe7Q9wq4Qj",
+    "name" : "tf_AWS_Dynamic_Test",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Vm5Y6tMFyglsO7R-gt-206827-2024-11-27T11:41:25.769Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-03-17T06:36:37.142Z",
+  "objectRefs" : [ {
+    "id" : "8qda5dBTRyzb7gfVuiVC80",
+    "name" : "mt_ORACLE_TO_AWS",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0Z0000000004L1"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___rahulLabTest/AWS_GCP_Parm_Test"
+  }, {
+    "id" : "eF0eOZvxSQJkS40vE9I6wo",
+    "name" : "mt_AWSS3_TO_CSV",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0Z0000000004L2"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___rahulLabTest/AWS_GCP_Parm_Test"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

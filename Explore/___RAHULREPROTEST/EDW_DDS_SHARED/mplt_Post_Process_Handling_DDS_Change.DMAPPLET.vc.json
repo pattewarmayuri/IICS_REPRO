@@ -1,0 +1,519 @@
+{
+  "content" : {
+    "description" : "Created on: 03-Sep-2013\nCreated by: Sonal Gudhka\nDescription: This mapplet updates the current session status to Successful.",
+    "allowMaxFieldLength" : "false",
+    "documentType" : "DMAPPLET",
+    "name" : "mplt_Post_Process_Handling_DDS_Change",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "UPD_SESS_COMPLETED_STATUS -> OUT_SESS_COMPLETED_STATUS"
+      },
+      {
+        "link" : "EXP_SET_COMPLETED_STATUS -> UPD_SESS_COMPLETED_STATUS"
+      },
+      {
+        "link" : "SQ_GET_CURR_AND_PREV_STATUS -> EXP_SET_COMPLETED_STATUS"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "DBConnection_METADATA",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      }
+    ],
+    "transformations" : [
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCreated_By: Sonal Gudhka\r\nDesc:  Send data out of mapplet into main mapping for updation\n",
+        "augmented" : "false",
+        "name" : "OUT_SESS_COMPLETED_STATUS",
+        "advancedProperties" : [
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fieldMappingMode" : "MANUAL",
+        "fields" : [
+          {
+            "name" : "SESS_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "name" : "Sess_Completed_Status",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 1,
+            "scale" : 0
+          },
+          {
+            "name" : "Sess_End_Time",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "Sess_Completed_Status",
+              "toField" : {
+                "name" : "Sess_Completed_Status"
+              }
+            },
+            {
+              "fromFieldName" : "Sess_End_Time",
+              "toField" : {
+                "name" : "Sess_End_Time"
+              }
+            },
+            {
+              "fromFieldName" : "SESS_EXEC_ID",
+              "toField" : {
+                "name" : "SESS_EXEC_ID"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "description" : "Original Description : Date_created: 03-Sep-2013\r\nCreated_By: Sonal Gudhka\r\nDesc:  Flags incoming record of a SESS_EXEC_ID for Updation.\nAdditional Info: Expression Tx is added in place of MidStream Update Strategy Transformation. Transformation attributes propagated to target..",
+        "augmented" : "false",
+        "name" : "UPD_SESS_COMPLETED_STATUS",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_SESS_EXEC_ST"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "OUT_SESS_COMPLETED_STATUS",
+                    "outputName" : "Sess_Completed_Status"
+                  },
+                  {
+                    "inputName" : "OUT_SESS_END_TIME",
+                    "outputName" : "Sess_End_Time"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "Update_Strategy_Expression_23041",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "DD_UPDATE"
+          }
+        ]
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_GET_CURR_AND_PREV_STATUS",
+        "advancedProperties" : [
+          {
+            "name" : "Number Of Sorted Ports",
+            "value" : "0"
+          },
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Is Partitionable",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_ID"
+            },
+            "name" : "SESS_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_ST"
+            },
+            "name" : "SESS_EXEC_ST",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "select se.sess_exec_id,se.sess_exec_st from sess_exec se, sess_master sm  where se.sess_id=sm.sess_id\nand upper(sm.sess_cd)=upper(regexp_replace('$CurrentMappingName','m_','s_',1,1)) and se.sess_exec_st=1 and se.wkf_exec_id=$$WKF_EXEC_ID",
+            "label" : "SESS_EXEC",
+            "retainMetadata" : "true",
+            "fields" : [
+              {
+                "name" : "SESS_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_PREV_SCSS_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_PREV_SCSS_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_ST",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SRC_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "TGT_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "ERR_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCreated_By: Sonal Gudhka\r\nDesc:  Expression sets status of a session being executed to 2(Completed) if it is in progress else aborts the session.\n",
+        "augmented" : "false",
+        "name" : "EXP_SET_COMPLETED_STATUS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "SESS_EXEC_ST",
+                    "outputName" : "IN_SESS_EXEC_ST"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "OUT_SESS_COMPLETED_STATUS",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 1,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "IIF(IN_SESS_EXEC_ST != 1, ABORT('Session not started correctly'), 2)"
+          },
+          {
+            "name" : "OUT_SESS_END_TIME",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SYSDATE"
+          }
+        ]
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_EXEC_ID",
+        "platformType" : {
+          "name" : "bigint"
+        },
+        "precision" : 19,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:25 PDT"
+}

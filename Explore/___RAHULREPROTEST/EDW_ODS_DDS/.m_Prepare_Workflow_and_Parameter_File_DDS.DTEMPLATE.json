@@ -1,0 +1,116 @@
+{
+  "objectInfo" : {
+    "id" : "dqbXSRBWeMAhZuYWnTwmqD",
+    "name" : "m_Prepare_Workflow_and_Parameter_File_DDS",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE170000000004SF"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Date_created: 03-Sep-2013\nCreated_By: Sonal Gudhka\nDesc:  This mapping Initializes EDW workflow instance, creates the basic metadata for all sessions in a workflow with an Initialized status and prepares the parameter file to be used by other sessions in the workflow",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-07-28T11:26:28.444Z",
+  "objectRefs" : [ {
+    "id" : "7ZW9griBjJ6cAzZiTNzyOh",
+    "name" : "tr_flatfiles",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0B00000000021Y"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "hYkWCBdr4KWiLZCxBLTG4i",
+    "name" : "SEQ_WKF_EXEC_ID",
+    "type" : "SequenceGenerator",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE4200000000000T"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Re-usable Sequence Generator pushed from PC to ICS",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___RAHULREPROTEST/EDW_SHARED"
+  }, {
+    "id" : "aJsZFCZJAOdcDZ3dAdhWK7",
+    "name" : "EDW_ETLMETA_REP",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0B00000000021X"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "4Q292ysg2hOkaa6QgNJQCc",
+    "name" : "SEQ_SESS_EXEC_ID",
+    "type" : "SequenceGenerator",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE4200000000000V"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Re-usable Sequence Generator pushed from PC to ICS",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___RAHULREPROTEST/EDW_SHARED"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

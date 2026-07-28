@@ -1,0 +1,119 @@
+{
+  "objectInfo" : {
+    "id" : "4KXx61ykLTYi15sGyPkTGH",
+    "name" : "m_ODS_DDS_XT_Hospital_Pack",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE170000000004SH"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Date_created: 13/10/2014\nCreated_By: Himani Desai\nDesc: This mapping will be used to load data from XT_Hospital_Pack  view to the corresponding table in DDS based on mapping sheet version v1.1",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-07-28T11:26:28.443Z",
+  "objectRefs" : [ {
+    "id" : "0XSYd0DEWynfDulGtMOxqz",
+    "name" : "DBSQL_DeltaLake_IDM",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0B00000000021W"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "hoNeGsBuUeblQuwmKZ8864",
+    "name" : "SEQ_ERROR_ROW_ID",
+    "type" : "SequenceGenerator",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE4200000000000U"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Re-usable Sequence Generator pushed from PC to ICS",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___RAHULREPROTEST/EDW_DDS_SHARED"
+  }, {
+    "id" : "6yJlhOiJOihiwNNZcN5HMz",
+    "name" : "mplt_Pre_Process_Dependencies_and_Initialization_DDS_Change",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE400000000000LS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Date_created: 03-Sep-2013\nCreated by: Sonal Gudhka\nDescription: This mapplet checks the predecessor session status (if any) and gives the status of the current session as Started(1).",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___RAHULREPROTEST/EDW_DDS_SHARED"
+  }, {
+    "id" : "1Y0FhDUAvi2jXVWhnH5jWv",
+    "name" : "mplt_Post_Process_Handling_DDS_Change",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE400000000000LR"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Created on: 03-Sep-2013\nCreated by: Sonal Gudhka\nDescription: This mapplet updates the current session status to Successful.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/___RAHULREPROTEST/EDW_DDS_SHARED"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

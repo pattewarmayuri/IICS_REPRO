@@ -1,0 +1,508 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_mapplet_synchronize_dependency_test",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "Expression -> Target"
+      },
+      {
+        "link" : "Mapplet -> Expression",
+        "groupLink" : "Output -> DefaultGroup"
+      },
+      {
+        "link" : "Source -> Expression1"
+      },
+      {
+        "link" : "Expression1 -> Target"
+      },
+      {
+        "link" : "Source -> Mapplet",
+        "groupLink" : "DefaultGroup -> Input"
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "createTime" : "2026-06-23T04:47:36.209Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "ID"
+            },
+            "name" : "ID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Line"
+            },
+            "name" : "Line",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DataValue"
+            },
+            "name" : "DataValue",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CR_UPD_DATE"
+            },
+            "name" : "CR_UPD_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0i8jN5bjzNkdxFc7bOHviX",
+          "connectionName" : "sql-server-demo",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "MySampleTable",
+            "label" : "MySampleTable",
+            "objectName" : "MySampleTable",
+            "path" : "MySampleTable",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "ID",
+                "nativeName" : "ID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "MySampleTable"
+                  }
+                ]
+              },
+              {
+                "name" : "Line",
+                "fieldType" : "CONNECTOR",
+                "label" : "Line",
+                "nativeName" : "Line",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "MySampleTable"
+                  }
+                ]
+              },
+              {
+                "name" : "DataValue",
+                "fieldType" : "CONNECTOR",
+                "label" : "DataValue",
+                "nativeName" : "DataValue",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "MySampleTable"
+                  }
+                ]
+              },
+              {
+                "name" : "CR_UPD_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CR_UPD_DATE",
+                "nativeName" : "CR_UPD_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "MySampleTable"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-06-23T04:47:36.214Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "Expression",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "exp_",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@0i8jN5bjzNkdxFc7bOHviX",
+          "connectionName" : "sql-server-demo",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "dbo/test_mpt_dependency",
+            "dbSchema" : "dbo",
+            "label" : "test_mpt_dependency",
+            "path" : "dbo/test_mpt_dependency",
+            "retainMetadata" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-06-23T04:47:45.597Z",
+        "name" : "Mapplet",
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "Output",
+            "output" : "true"
+          },
+          {
+            "input" : "true",
+            "name" : "Input",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "active" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "saasMappletId" : "@0DSKm2rzZAoiwKalJmuQK2",
+        "saasMappletName" : "mpt_dependency_test",
+        "type" : "NATIVE",
+        "inputGroups" : [
+          {
+            "name" : "Input",
+            "fields" : [
+              {
+                "name" : "name",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 100,
+                "scale" : 0
+              },
+              {
+                "name" : "id",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "dept",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "outputGroups" : [
+          {
+            "name" : "Output",
+            "fields" : [
+              {
+                "name" : "dept",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "id",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 50,
+                "scale" : 0
+              },
+              {
+                "name" : "name",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 100,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "validForEngines" : [
+          "CDI",
+          "CDI_E"
+        ],
+        "dataAdapter" : {
+          "inputFields" : [
+            {
+              "name" : "name",
+              "fieldType" : "UNDEFINED",
+              "label" : "name",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 100,
+              "scale" : 0
+            },
+            {
+              "name" : "id",
+              "fieldType" : "UNDEFINED",
+              "label" : "id",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0
+            },
+            {
+              "name" : "dept",
+              "fieldType" : "UNDEFINED",
+              "label" : "dept",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            }
+          ],
+          "outputFields" : [
+            {
+              "name" : "dept",
+              "fieldType" : "UNDEFINED",
+              "label" : "dept",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            },
+            {
+              "name" : "id",
+              "fieldType" : "UNDEFINED",
+              "label" : "id",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 50,
+              "scale" : 0
+            },
+            {
+              "name" : "name",
+              "fieldType" : "UNDEFINED",
+              "label" : "name",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 100,
+              "scale" : 0
+            }
+          ]
+        },
+        "fieldMapping" : {
+          "fields" : [
+            {
+              "adapterField" : {
+                "name" : "id"
+              },
+              "name" : "ID",
+              "precision" : 0,
+              "scale" : 0
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-06-23T08:36:39.734Z",
+        "name" : "Expression",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-06-23T08:37:40.898Z",
+        "name" : "Expression1",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-06-23 14:31:23 IST"
+}

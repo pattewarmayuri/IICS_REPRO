@@ -1,0 +1,1562 @@
+{
+  "content" : {
+    "description" : "Temp Description",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "Mapping23 - Copy 1",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "Source -> Filter"
+      },
+      {
+        "link" : "Filter -> Sorter"
+      },
+      {
+        "link" : "Sequence -> Expression"
+      },
+      {
+        "link" : "Expression -> Target"
+      },
+      {
+        "link" : "Router -> Sequence",
+        "groupLink" : "Insert -> DefaultGroup"
+      },
+      {
+        "link" : "Lookup -> Router",
+        "groupLink" : "DefaultGroup -> INPUT"
+      },
+      {
+        "link" : "Expression1 -> Lookup"
+      },
+      {
+        "link" : "Sorter -> Expression1"
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-03T10:45:18.048Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Business_Unit"
+            },
+            "name" : "Business_Unit",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Division"
+            },
+            "name" : "Division",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Business_Segment"
+            },
+            "name" : "Business_Segment",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RRX_IPH_Product_Family__L1_"
+            },
+            "name" : "RRX_IPH_Product_Family__L1_",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RRX_IPH_Product_Class__L2_"
+            },
+            "name" : "RRX_IPH_Product_Class__L2_",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RRX_IPH_Product_Group__L3_"
+            },
+            "name" : "RRX_IPH_Product_Group__L3_",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RRX_IPH_Product_Type__L4_"
+            },
+            "name" : "RRX_IPH_Product_Type__L4_",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RRX_IPH_Product_Category__L5_"
+            },
+            "name" : "RRX_IPH_Product_Category__L5_",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aQ1upWGphvRlKpLDvYVfcB",
+          "connectionName" : "Rahul_Flat_File_Test",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "04780490_Test.csv",
+            "label" : "04780490_Test.csv",
+            "objectName" : "04780490_Test.csv",
+            "path" : "04780490_Test.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Business_Unit",
+                "fieldType" : "CONNECTOR",
+                "label" : "Business_Unit",
+                "nativeName" : "Business_Unit",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Division",
+                "fieldType" : "CONNECTOR",
+                "label" : "Division",
+                "nativeName" : "Division",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Business_Segment",
+                "fieldType" : "CONNECTOR",
+                "label" : "Business_Segment",
+                "nativeName" : "Business_Segment",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RRX_IPH_Product_Family__L1_",
+                "fieldType" : "CONNECTOR",
+                "label" : "RRX_IPH_Product_Family__L1_",
+                "nativeName" : "RRX_IPH_Product_Family__L1_",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RRX_IPH_Product_Class__L2_",
+                "fieldType" : "CONNECTOR",
+                "label" : "RRX_IPH_Product_Class__L2_",
+                "nativeName" : "RRX_IPH_Product_Class__L2_",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RRX_IPH_Product_Group__L3_",
+                "fieldType" : "CONNECTOR",
+                "label" : "RRX_IPH_Product_Group__L3_",
+                "nativeName" : "RRX_IPH_Product_Group__L3_",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RRX_IPH_Product_Type__L4_",
+                "fieldType" : "CONNECTOR",
+                "label" : "RRX_IPH_Product_Type__L4_",
+                "nativeName" : "RRX_IPH_Product_Type__L4_",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RRX_IPH_Product_Category__L5_",
+                "fieldType" : "CONNECTOR",
+                "label" : "RRX_IPH_Product_Category__L5_",
+                "nativeName" : "RRX_IPH_Product_Category__L5_",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "04780490_Test.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-03T10:52:34.573Z",
+        "name" : "Filter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "advancedFilterCondition" : "NOT(LTRIM(RTRIM(RRX_IPH_Product_Family__L1_)) = '0' OR LTRIM(RTRIM(RRX_IPH_Product_Family__L1_))= '+' OR\nISNULL(LTRIM(RTRIM(RRX_IPH_Product_Family__L1_))) =1)"
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-03T10:57:18.540Z",
+        "name" : "Sorter",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Sorter Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Case Sensitive",
+            "value" : "true"
+          },
+          {
+            "name" : "Work Directory",
+            "value" : "$PMTempDir"
+          },
+          {
+            "name" : "Distinct",
+            "value" : "true"
+          },
+          {
+            "name" : "Null Treated Low",
+            "value" : "false"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "Business_Segment"
+                  },
+                  {
+                    "inputName" : "Business_Unit"
+                  },
+                  {
+                    "inputName" : "Division"
+                  },
+                  {
+                    "inputName" : "RRX_IPH_Product_Family__L1_"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "true",
+            "fieldName" : "Business_Unit"
+          },
+          {
+            "ascending" : "true",
+            "fieldName" : "Division"
+          },
+          {
+            "ascending" : "true",
+            "fieldName" : "Business_Segment"
+          },
+          {
+            "ascending" : "true",
+            "fieldName" : "RRX_IPH_Product_Family__L1_"
+          }
+        ]
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-04T10:37:31.774Z",
+        "name" : "Expression",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "v_Level",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "'L01'"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "IIF(\nLENGTH(NEXTVAL)=1,CONCAT('IPH00',NEXTVAL),\nIIF(\nLENGTH(NEXTVAL)=2,CONCAT('IPH0',NEXTVAL),\nCONCAT('IPH',NEXTVAL)))"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_Level",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'L01'"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_SRC_LUD",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SESSSTARTTIME"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_RECORD_STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'INSERT'"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-05T11:48:03.748Z",
+        "name" : "Sequence",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "midstream" : "true",
+        "state" : {
+          "currentValue" : "1",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "0",
+          "reset" : "true",
+          "startValue" : "0",
+          "useSharedSequence" : "false"
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-05T12:02:04.908Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "srt_RRX_IPH_Product_Family__L1_"
+                  },
+                  {
+                    "inputName" : "srt_Division"
+                  },
+                  {
+                    "inputName" : "srt_Business_Unit"
+                  },
+                  {
+                    "inputName" : "srt_Business_Segment"
+                  },
+                  {
+                    "inputName" : "o_RECORD_STATE"
+                  },
+                  {
+                    "inputName" : "o_Level"
+                  },
+                  {
+                    "inputName" : "o_SRC_LUD"
+                  },
+                  {
+                    "inputName" : "o_CODE"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "NAME"
+            },
+            "name" : "NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CODE"
+            },
+            "name" : "CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LEVEL"
+            },
+            "name" : "LEVEL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BUSINESS_UNIT_1"
+            },
+            "name" : "BUSINESS_UNIT_1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BUSINESS_SEGMENT_1"
+            },
+            "name" : "BUSINESS_SEGMENT_1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DIVISION"
+            },
+            "name" : "DIVISION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SRC_LUD"
+            },
+            "name" : "SRC_LUD",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "RECORD_STATE"
+            },
+            "name" : "RECORD_STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@kjJKqK66y00d3suEcsinwv",
+          "connectionName" : "Rahul_Snowflake_Win_Conn",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "GCS/GCS_SCHEMA/TEST04780490",
+            "label" : "GCS/GCS_SCHEMA/TEST04780490",
+            "objectName" : "TEST04780490",
+            "objectType" : "table",
+            "path" : "GCS/GCS_SCHEMA/TEST04780490",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "NAME",
+                "nativeName" : "NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CODE",
+                "nativeName" : "CODE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "LEVEL",
+                "fieldType" : "CONNECTOR",
+                "label" : "LEVEL",
+                "nativeName" : "LEVEL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "BUSINESS_UNIT_1",
+                "fieldType" : "CONNECTOR",
+                "label" : "BUSINESS_UNIT_1",
+                "nativeName" : "BUSINESS_UNIT_1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "BUSINESS_SEGMENT_1",
+                "fieldType" : "CONNECTOR",
+                "label" : "BUSINESS_SEGMENT_1",
+                "nativeName" : "BUSINESS_SEGMENT_1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "DIVISION",
+                "fieldType" : "CONNECTOR",
+                "label" : "DIVISION",
+                "nativeName" : "DIVISION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "SRC_LUD",
+                "fieldType" : "CONNECTOR",
+                "label" : "SRC_LUD",
+                "nativeName" : "SRC_LUD",
+                "nativeType" : "timestampntz",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              },
+              {
+                "name" : "RECORD_STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "RECORD_STATE",
+                "nativeName" : "RECORD_STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEST04780490"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "o_CODE",
+              "toField" : {
+                "name" : "CODE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_Level",
+              "toField" : {
+                "name" : "LEVEL"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "srt_Division",
+              "toField" : {
+                "name" : "DIVISION"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_SRC_LUD",
+              "toField" : {
+                "name" : "SRC_LUD"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_RECORD_STATE",
+              "toField" : {
+                "name" : "RECORD_STATE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "srt_RRX_IPH_Product_Family__L1_",
+              "toField" : {
+                "name" : "NAME"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "srt_Business_Unit",
+              "toField" : {
+                "name" : "BUSINESS_UNIT_1"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "srt_Business_Segment",
+              "toField" : {
+                "name" : "BUSINESS_SEGMENT_1"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-05T12:36:17.841Z",
+        "name" : "Router",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "INPUT",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "DEFAULT1",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "Insert",
+            "output" : "true"
+          }
+        ],
+        "groupFilterConditions" : [
+          {
+            "advancedFilterCondition" : "ISNULL(NAME)=TRUE",
+            "name" : "Insert"
+          }
+        ]
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-05T14:06:07.898Z",
+        "name" : "Lookup",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Use Lookup Field Default Value",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Update Dynamic Cache Condition",
+            "value" : "TRUE"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Case Sensitive String Comparison",
+            "value" : "false"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "bulkRenameOption" : {
+                  "literal" : "FILE_",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Use First Value",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "NAME"
+            },
+            "name" : "NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CODE"
+            },
+            "name" : "CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DESCRIPTION"
+            },
+            "name" : "DESCRIPTION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LEVEL"
+            },
+            "name" : "LEVEL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BUSINESS_UNIT_1"
+            },
+            "name" : "BUSINESS_UNIT_1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BUSINESS_SEGMENT_1"
+            },
+            "name" : "BUSINESS_SEGMENT_1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DIVISION"
+            },
+            "name" : "DIVISION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ERP_CODE_1"
+            },
+            "name" : "ERP_CODE_1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PARENT_ID"
+            },
+            "name" : "PARENT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SRC_LUD"
+            },
+            "name" : "SRC_LUD",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "RECORD_STATE"
+            },
+            "name" : "RECORD_STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : null,
+        "lookupConditions" : [
+          {
+            "leftOperand" : "NAME",
+            "operator" : "=",
+            "rightOperand" : "FILE_RRX_IPH_Product_Family__L1_"
+          },
+          {
+            "leftOperand" : "BUSINESS_UNIT_1",
+            "operator" : "=",
+            "rightOperand" : "FILE_Business_Unit"
+          },
+          {
+            "leftOperand" : "BUSINESS_SEGMENT_1",
+            "operator" : "=",
+            "rightOperand" : "FILE_Business_Segment"
+          },
+          {
+            "leftOperand" : "DIVISION",
+            "operator" : "=",
+            "rightOperand" : "FILE_Division"
+          },
+          {
+            "leftOperand" : "LEVEL",
+            "operator" : "=",
+            "rightOperand" : "FILE_OUT_LEVEL"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1JWcCuOlN2YekrgnN2msqI",
+          "connectionName" : "Snowflake_MDM_POND_DEV",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "MDM_POND_DEV/TEMP/TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK",
+            "label" : "MDM_POND_DEV/TEMP/TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK",
+            "objectName" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK",
+            "objectType" : "table",
+            "path" : "MDM_POND_DEV/TEMP/TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "NAME",
+                "nativeName" : "NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CODE",
+                "nativeName" : "CODE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "DESCRIPTION",
+                "fieldType" : "CONNECTOR",
+                "label" : "DESCRIPTION",
+                "nativeName" : "DESCRIPTION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "LEVEL",
+                "fieldType" : "CONNECTOR",
+                "label" : "LEVEL",
+                "nativeName" : "LEVEL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "BUSINESS_UNIT_1",
+                "fieldType" : "CONNECTOR",
+                "label" : "BUSINESS_UNIT_1",
+                "nativeName" : "BUSINESS_UNIT_1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "BUSINESS_SEGMENT_1",
+                "fieldType" : "CONNECTOR",
+                "label" : "BUSINESS_SEGMENT_1",
+                "nativeName" : "BUSINESS_SEGMENT_1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "DIVISION",
+                "fieldType" : "CONNECTOR",
+                "label" : "DIVISION",
+                "nativeName" : "DIVISION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "ERP_CODE_1",
+                "fieldType" : "CONNECTOR",
+                "label" : "ERP_CODE_1",
+                "nativeName" : "ERP_CODE_1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 4000,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "PARENT_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "PARENT_ID",
+                "nativeName" : "PARENT_ID",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "SRC_LUD",
+                "fieldType" : "CONNECTOR",
+                "label" : "SRC_LUD",
+                "nativeName" : "SRC_LUD",
+                "nativeType" : "timestampntz",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              },
+              {
+                "name" : "RECORD_STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "RECORD_STATE",
+                "nativeName" : "RECORD_STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TEMP_INTERNAL_PRODUCT_HIERARCHY_LOK"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-02-05T14:09:11.629Z",
+        "name" : "Expression1",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "OUT_LEVEL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'L01'"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:25 PDT"
+}

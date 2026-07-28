@@ -1,0 +1,178 @@
+{
+  "name" : "mt_ref_canada_ods_accounting_center_productcode",
+  "runtimeEnvironmentId" : "@4Rwj29Qv8UfeeTSpCtrDmz",
+  "runtimeEnvironmentName" : "gcp-agent-group",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$source_reference_gcs$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "src_ods_ref_gen_gcs_connection",
+      "uiProperties" : {
+        "cnxtype" : "Google Cloud Storage V2",
+        "connectionParameterized" : "true",
+        "paramName" : "src_ods_ref_gen_gcs_connection",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "src_ods_ref_gen_gcs_connection",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "src_ods_ref_gen_gcs_file_path",
+        "objectParameterized" : "true",
+        "objectParamName" : "src_ods_ref_gen_gcs_file_path",
+        "objectParamType-mapping" : "DataObject",
+        "originalPath" : "source_reference_gcs"
+      },
+      "sourceConnectionId" : "@7W5qy9jxXP7cfZJnZFadGV",
+      "connectionName" : "conn_gcp_ods_refdata_gen_gcs",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "cna-com-g-cut1-proj-caods-refdata-gen/reference_files/canadaBusinessMaintainAccountingCenterProductCode_csv",
+          "label" : "canadaBusinessMaintainAccountingCenterProductCode_csv",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "cna-com-g-cut1-proj-caods-refdata-gen/reference_files/canadaBusinessMaintainAccountingCenterProductCode_csv",
+            "label" : "canadaBusinessMaintainAccountingCenterProductCode_csv",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : ",",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "disableEscapeChar" : "true",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "connectionParameterName" : "src_ods_ref_gen_gcs_connection",
+        "objectParameterName" : "src_ods_ref_gen_gcs_file_path",
+        "connectionRuntimeParameter" : true,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$t_reference_postgres$",
+      "type" : "TARGET",
+      "label" : "tgt_ods_pg_connection",
+      "uiProperties" : {
+        "cnxtype" : "PostgreSQL",
+        "connectionParameterized" : "true",
+        "paramName" : "tgt_ods_pg_connection",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "tgt_ods_pg_connection",
+        "objlabel" : "tgt_ods_pg_tablename",
+        "objectParameterized" : "true",
+        "objectParamName" : "tgt_ods_pg_tablename",
+        "objectParamType-mapping" : "DataObject",
+        "defaultTargetUpdateColumns" : "productcode",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "t_reference_postgres"
+      },
+      "targetConnectionId" : "@8sWB0Qk44yzjEfc5jNjg4r",
+      "connectionName" : "conn_gcp_ods_pg",
+      "targetObject" : "ca_mastered_ref_data/TABLE/canadabusinessmaintainaccountingcenterproductcode",
+      "targetObjectLabel" : "canadabusinessmaintainaccountingcenterproductcode",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Upsert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "ca_mastered_ref_data/TABLE/canadabusinessmaintainaccountingcenterproductcode",
+      "objectLabel" : "canadabusinessmaintainaccountingcenterproductcode",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "runtimeParameterData" : {
+        "connectionParameterName" : "tgt_ods_pg_connection",
+        "objectParameterName" : "tgt_ods_pg_tablename",
+        "objectDefaultValue" : "canadabusinessmaintainaccountingcenterproductcode",
+        "connectionRuntimeParameter" : true,
+        "objectRuntimeParameter" : true
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "mappingId" : "@3v6K3P8QHIDkcRnq6RJnIg",
+  "mappingTemplateName" : "m_ref_canada_ods_accounting_center_productcode",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Fallback Option",
+      "value" : "Partial PDO"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "parameterFileName" : "cna-com-g-cut1-proj-caods-idmc-params/parameter_files/mt_ref_canada_ods_accounting_center_productcode.param",
+  "paramFileType" : "PARAM_FILE_CLOUD",
+  "schemaMode" : "async",
+  "valid" : true,
+  "paramFileConnectionId" : "@62mt1DKqOYTj2st678vFam",
+  "connectionName" : "conn_gcp_ods_idmc_params_gcs",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2026-07-28 04:26:26 PDT"
+}

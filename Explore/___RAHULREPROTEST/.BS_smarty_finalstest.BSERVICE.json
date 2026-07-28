@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "5xLkSMQsJqMjEU6Bfkq9AI",
+    "name" : "BS_smarty_finalstest",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE2700000000006D"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "015ZHE28000000000097",
+        "value" : "5xLkSMQsJqMjEU6Bfkq9AI@smarty_us_swagger_file"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-07-28T11:26:28.434Z",
+  "objectRefs" : [ {
+    "id" : "8kaqP2ltPBee51QVdyI7an",
+    "name" : "smarty_final",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0B0000000001ZJ"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

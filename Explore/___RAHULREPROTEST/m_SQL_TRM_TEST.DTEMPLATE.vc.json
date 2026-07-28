@@ -1,0 +1,358 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_SQL_TRM_TEST",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "SQL -> Target"
+      },
+      {
+        "link" : "Expression -> SQL"
+      },
+      {
+        "link" : "Source -> Expression"
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-16T11:42:33.973Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "FIRST_NAME"
+            },
+            "name" : "FIRST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1MukXT3JbqEeBVkpuJ6reg",
+          "connectionName" : "Rahul_Oracle_DB",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "select distinct first_name from customer where IND = 1",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "FIRST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "FIRST_NAME",
+                "nativeName" : "FIRST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-16T11:42:33.973Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@0LLzuoZQp5ndAvag8sh9se",
+          "connectionName" : "Rahul_Unix_Flat_File",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "reproSQLTRM.csv",
+            "label" : "reproSQLTRM.csv",
+            "path" : "reproSQLTRM.csv",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-16T11:43:18.783Z",
+        "name" : "SQL",
+        "advancedProperties" : [
+          {
+            "name" : "Is Active",
+            "value" : "true"
+          },
+          {
+            "name" : "Is_Continue_On_Error_Selected",
+            "value" : "false"
+          },
+          {
+            "name" : "Auto_Commit",
+            "value" : "false"
+          },
+          {
+            "name" : "Max_Out_Row_Count",
+            "value" : "600"
+          },
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "Row"
+          },
+          {
+            "name" : "Stored Procedure Type",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Execution Order",
+            "value" : "1"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fieldMappingMode" : "MANUAL",
+        "unconnected" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SQLError"
+            },
+            "name" : "SQLError",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0,
+            "fieldType" : "OUT"
+          },
+          {
+            "adapterField" : {
+              "name" : "NUMRows"
+            },
+            "name" : "NUMRows",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "fieldType" : "OUT"
+          },
+          {
+            "adapterField" : {
+              "name" : "Createtime_output"
+            },
+            "name" : "Createtime_output",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "fieldType" : "OUT"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1MukXT3JbqEeBVkpuJ6reg",
+          "connectionName" : "Rahul_Oracle_DB",
+          "sql" : "update\n  c04740132.Dummy_Rahul\nset\n  NAME = 'XUXYZZ'\nwhere\n  Id = 1",
+          "sqlMetadataEdited" : "false",
+          "sqlType" : "ENTERED_QUERY",
+          "typeSystem" : "Oracle",
+          "fields" : [
+            {
+              "name" : "SQLError",
+              "fieldType" : "UNDEFINED",
+              "label" : "SQLError",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 255,
+              "scale" : 0
+            },
+            {
+              "name" : "NUMRows",
+              "fieldType" : "UNDEFINED",
+              "label" : "NUMRows",
+              "nativeType" : "integer",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            },
+            {
+              "name" : "Createtime_output",
+              "fieldType" : "UNDEFINED",
+              "label" : "Createtime_output",
+              "original" : "false",
+              "precision" : 29,
+              "scale" : 9
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-16T12:07:18.944Z",
+        "name" : "Expression",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Createtime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "Systimestamp()"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "jobInstanceID",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:24 PDT"
+}

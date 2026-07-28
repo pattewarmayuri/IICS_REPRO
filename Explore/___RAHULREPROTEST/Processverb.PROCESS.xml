@@ -1,0 +1,82 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>q0jmu6lS01BchMY-gt-30665418-2025-02-28T05:46:01.264Z::pd.xml</types1:EntryId>
+      <types1:Name>Processverb</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:___rahulunixlab,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>Rahul_pandey</types1:CreatedBy>
+      <types1:CreationDate>2025-02-28T05:46:01Z</types1:CreationDate>
+      <types1:ModifiedBy>Rahul_pandey</types1:ModifiedBy>
+      <types1:ModificationDate>2025-02-28T05:46:21Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>Rahul_pandey</types1:PublishedBy>
+      <types1:PublicationDate>2025-02-28T05:46:32Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Processverb/Processverb.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="gwdOT8yafWCeiENcxqoyoa"
+                  displayName="Processverb"
+                  name="Processverb"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:___rahulunixlab,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="input" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>___rahulunixlab</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m7ocl0cn" targetId="m7ocl0cm"/>
+               </start>
+               <assignment id="m7ocl0cm">
+                  <title>Assignment to input</title>
+                  <operation source="constant" to="input.input">5</operation>
+                  <link id="m7ocl0co" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>e8b78a8a-35e4-449b-9c6d-c78b9cc71a1e</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>Rahul_pandey</ns1:CreatedBy>
+               <ns1:CreationDate>2025-02-28T05:46:54Z</ns1:CreationDate>
+               <ns1:ModifiedBy>Rahul_pandey</ns1:ModifiedBy>
+               <ns1:ModificationDate>2025-02-28T05:46:54Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "input": "5"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>gwdOT8yafWCeiENcxqoyoa</types1:GUID>
+      <types1:DisplayName>Processverb</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2026-07-28T11:26:23.534Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

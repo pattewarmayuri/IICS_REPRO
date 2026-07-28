@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "hC01hSV0Mqpkd9HsW84Uy0",
+    "name" : "AddComment",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6DfYLnzYLnzYLnz-gt-7132960-2025-07-24T13:05:19.924Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Does a POST with path variable against the order comment",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2026-07-28T11:26:28.429Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

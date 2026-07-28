@@ -1,0 +1,190 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>6DfYLnzYLnzYLnz-gt-7132960-2025-07-24T13:05:19.924Z::pd.xml</types1:EntryId>
+      <types1:Name>createcustomer</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Does a POST with path variable against the order comment</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:invamulya02</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>Rahul_pandey</types1:CreatedBy>
+      <types1:CreationDate>2025-07-24T13:05:20Z</types1:CreationDate>
+      <types1:ModifiedBy>Rahul_pandey</types1:ModifiedBy>
+      <types1:ModificationDate>2026-04-03T05:12:08Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>Rahul_pandey</types1:PublishedBy>
+      <types1:PublicationDate>2026-04-03T05:12:37Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.createcustomer/createcustomer.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="hC01hSV0Mqpkd9HsW84Uy0"
+                  displayName="AddComment"
+                  name="createcustomer"
+                  overrideAPIName="true">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Does a POST with path variable against the order comment</description>
+            <tags>.agent:invamulya02</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="id" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="comment" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="result" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="myPathVariables" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:DataMarketplacePathVariables</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>invamulya02</targetLocation>
+               <rest>
+                  <allowedGroups>
+                     <group>ENT_EDC_PLATFORM_DEVELOPER-DEV</group>
+                     <group>ENT_EDC_PLATFORM_DEVELOPER-TST</group>
+                     <group>ENT_EDC_PLATFORM_DEVELOPER-VAL</group>
+                     <group>ENT_EDC_PLATFORM_DEVELOPER-PRD</group>
+                     <group>ENT_EDC_ADMIN-DEV</group>
+                     <group>ENT_EDC_ADMIN-TST</group>
+                     <group>ENT_EDC_ADMIN-PRD</group>
+                     <group>ENT_EDC_ADMIN-VAL</group>
+                  </allowedGroups>
+                  <allowedUsers>
+                     <user>gilead-cai-user-dev</user>
+                     <user>gilead-cai-user-tst</user>
+                     <user>gilead-cai-user-val</user>
+                     <user>gilead-cai-user-prd</user>
+                     <user>gilead-meshapi-dev</user>
+                     <user>gilead-meshapi-tst</user>
+                     <user>gilead-meshapi-val</user>
+                     <user>gilead-meshapi-prd</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="ncd442f62-dcfa-408d-aa10-4be3472d9c1a">
+               <start id="b9cc5940f-4d2f-46f8-ac77-66489b9c05d5">
+                  <link id="q104e93d5-1cbe-4918-866b-e095e0d74b15"
+                        targetId="a1hC01hSV0Mqpkd9HsW84Uy0-laqkp86r"/>
+               </start>
+               <assignment id="a1hC01hSV0Mqpkd9HsW84Uy0-laqkp86r">
+                  <title>Assignment to myPathVariables</title>
+                  <operation source="formula" to="temp.myPathVariables">
+                     <expression language="XQuery">&lt;DataMarketplacePathVariables&gt;
+  &lt;pathVariables&gt;
+    &lt;name&gt;id&lt;/name&gt;
+    &lt;value&gt;{$input.id}&lt;/value&gt;
+  &lt;/pathVariables&gt;
+&lt;/DataMarketplacePathVariables&gt;</expression>
+                  </operation>
+                  <link id="p59549280-deb6-42d9-b6d2-eeb63efbc6ce"
+                        targetId="a1hC01hSV0Mqpkd9HsW84Uy0-lofnm9om"/>
+               </assignment>
+               <assignment id="a1hC01hSV0Mqpkd9HsW84Uy0-l5c5692l">
+                  <title>Assignment to result</title>
+                  <operation source="formula" to="output.result">
+                     <expression language="XQuery">$output.DataMarketplaceResponse</expression>
+                  </operation>
+                  <link id="h50509af9-dc2a-4bd6-933b-af061b2253df"
+                        targetId="a1hC01hSV0Mqpkd9HsW84Uy0-c"/>
+               </assignment>
+               <eventContainer id="a1hC01hSV0Mqpkd9HsW84Uy0-lofnm9om">
+                  <service id="gf8cf7658-aeaa-4c58-9204-5051b2ab85eb">
+                     <title>Add comment to CDMP asset</title>
+                     <serviceName>ICSExecuteCDMPApi</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="httpMethod" source="constant">POST</parameter>
+                        <parameter name="relativePath" source="constant">collaboration/{{id}}/interactions/comments</parameter>
+                        <parameter name="payload" source="formula">
+                           <expression language="XQuery">let $content:= &lt;text&gt;{$input.comment}&lt;/text&gt;
+
+return util:toJSON($content)</expression>
+                        </parameter>
+                        <parameter name="pathVariables" source="field">temp.myPathVariables</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="cd73c3ef0-2bd8-43f3-8fa1-41823caa74c5">
+                     <link id="nd3c83f3a-6c02-4f36-8880-8483819766b8"
+                           targetId="a1hC01hSV0Mqpkd9HsW84Uy0-lofnm9om"
+                           type="containerLink"/>
+                  </flow>
+                  <flow id="gc1945426-e807-43b0-8adf-d0f3555a4daa">
+                     <throw id="a1hC01hSV0Mqpkd9HsW84Uy0-logzky87">
+                        <title>Throw 1</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="h6aa4a461-d5df-48b0-b680-78f82cc73acc"
+                        targetId="cd73c3ef0-2bd8-43f3-8fa1-41823caa74c5"
+                        type="containerLink"/>
+                  <link id="j06f22046-3976-44e0-9217-5baec3fbc58a"
+                        targetId="a1hC01hSV0Mqpkd9HsW84Uy0-l5c5692l"/>
+                  <events>
+                     <catch faultField="faultInfo"
+                            id="v5821b027-d79c-4349-82e2-4c561227ad2c"
+                            interrupting="true">
+                        <link id="k8cd2871f-d4c7-4dec-9b29-fd4f2ccac01f"
+                              targetId="gc1945426-e807-43b0-8adf-d0f3555a4daa"
+                              type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="a1hC01hSV0Mqpkd9HsW84Uy0-c">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>18f9ff63-c11d-4fa2-bc4b-ce8d68513a78</ns1:Id>
+               <ns1:Name>Test</ns1:Name>
+               <ns1:CreatedBy>Rahul_pandey</ns1:CreatedBy>
+               <ns1:CreationDate>2025-07-24T13:05:20Z</ns1:CreationDate>
+               <ns1:ModifiedBy>Rahul_pandey</ns1:ModifiedBy>
+               <ns1:ModificationDate>2025-08-02T05:01:25Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "id": "a01822a0-74d7-403c-97a1-175c8517bfc6",
+	 "comment": "Test Reject Order Comment 1"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>hC01hSV0Mqpkd9HsW84Uy0</types1:GUID>
+      <types1:DisplayName>AddComment</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2026-07-28T11:26:24.73Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

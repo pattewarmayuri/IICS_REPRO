@@ -1,15 +1,15 @@
 {
   "objectInfo" : {
-    "id" : "7iG6C1ORgckdiI1wRfjyAg",
-    "name" : "Overriding_field_mapping",
-    "type" : "TASKFLOW",
+    "id" : "egZFhE5P7MtgkzmkR9waAg",
+    "name" : "Processfaulthandling",
+    "type" : "PROCESS",
     "metadata" : {
       "modelVersion" : {
         "major" : 1,
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "xeLeG3vASaaaaa-gt-191484-2025-02-25T06:27:22.375Z::tf.xml"
+        "repoHandle" : "dqcgm8lnCmp6oIu-gt-3899377-2025-01-24T11:52:58.051Z::pd.xml"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
@@ -20,34 +20,27 @@
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2025-09-24T07:27:05.292Z",
-=======
-  "updateTime" : "2025-09-26T05:48:51.042Z",
+  "updateTime" : "2026-07-28T11:26:28.434Z",
   "objectRefs" : [ {
-    "id" : "9fTs8pgD8EXbgajhs4z5C0",
-    "name" : "Overriding_field_mapping",
-    "type" : "MTT",
+    "id" : "4nRY6RZjumydCO6z2fmMqP",
+    "name" : "AppConnectionForServiceConnectorToCreateOracleConnection",
+    "type" : "AI_CONNECTION",
     "metadata" : {
       "modelVersion" : {
-        "major" : 0,
+        "major" : 1,
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "015ZHE0Z0000000004W2"
+        "repoHandle" : "eBmeK3jhBjop81V-gt-314165-2025-01-23T10:26:45.066Z::conn.xml"
       },
       "contextAttributes" : null,
-=======
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
       "additionalInfo" : {
-        "description" : null,
-        "contentType" : "JSON",
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/mpattewar"
+    "path" : "/Explore/__VJCAIAppConnectuion"
   } ],
   "readableFileExtension" : null,
   "readableFilePresent" : false
