@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "aHRo5ClZ5L9f3mUtMYLs0D",
+    "name" : "EDW_DDS_SHARED",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "EDW_DDS_SHARED , this is the shared folder",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-07-28T11:26:28.433Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

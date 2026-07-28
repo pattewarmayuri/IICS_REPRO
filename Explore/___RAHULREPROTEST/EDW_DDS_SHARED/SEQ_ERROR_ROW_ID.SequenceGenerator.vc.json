@@ -1,0 +1,13 @@
+{
+  "name" : "SEQ_ERROR_ROW_ID",
+  "description" : "Re-usable Sequence Generator pushed from PC to ICS",
+  "startValue" : "0",
+  "endValue" : "9223372036854775807",
+  "currentValue" : "30000000000",
+  "initialValue" : "30000000000",
+  "incrementBy" : "1",
+  "cachedValues" : "1000",
+  "cyclic" : false,
+  "resetToInitial" : false,
+  "vcsExportTime" : "2026-07-28 04:26:24 PDT"
+}

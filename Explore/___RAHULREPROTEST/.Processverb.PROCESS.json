@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "gwdOT8yafWCeiENcxqoyoa",
+    "name" : "Processverb",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "q0jmu6lS01BchMY-gt-30665418-2025-02-28T05:46:01.264Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2026-07-28T11:26:28.437Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

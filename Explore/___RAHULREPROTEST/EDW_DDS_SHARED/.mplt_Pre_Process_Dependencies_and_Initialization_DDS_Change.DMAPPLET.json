@@ -1,0 +1,50 @@
+{
+  "objectInfo" : {
+    "id" : "6yJlhOiJOihiwNNZcN5HMz",
+    "name" : "mplt_Pre_Process_Dependencies_and_Initialization_DDS_Change",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE400000000000LS"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Date_created: 03-Sep-2013\nCreated by: Sonal Gudhka\nDescription: This mapplet checks the predecessor session status (if any) and gives the status of the current session as Started(1).",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-07-28T11:26:28.446Z",
+  "objectRefs" : [ {
+    "id" : "aJsZFCZJAOdcDZ3dAdhWK7",
+    "name" : "EDW_ETLMETA_REP",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "015ZHE0B00000000021X"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

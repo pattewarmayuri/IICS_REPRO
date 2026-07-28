@@ -1,0 +1,430 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "Mapping646",
+    "specialCharacterSupport" : "false",
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-22T09:01:51.415Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Domain"
+            },
+            "name" : "Domain",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Source"
+            },
+            "name" : "Source",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PKey"
+            },
+            "name" : "PKey",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_addr1"
+            },
+            "name" : "source_addr1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_addr2"
+            },
+            "name" : "source_addr2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_addr3"
+            },
+            "name" : "source_addr3",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_addr4"
+            },
+            "name" : "source_addr4",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_city"
+            },
+            "name" : "source_city",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_state"
+            },
+            "name" : "source_state",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_postal_code"
+            },
+            "name" : "source_postal_code",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "source_country"
+            },
+            "name" : "source_country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@4A3vXueWB9OhE7wB9n77Ol",
+          "connectionName" : "Rahul_File_Unix",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "Prod_Ins_Src_Project_US_Adhocdeb.csv",
+            "label" : "Prod_Ins_Src_Project_US_Adhocdeb.csv",
+            "objectName" : "Prod_Ins_Src_Project_US_Adhocdeb.csv",
+            "path" : "Prod_Ins_Src_Project_US_Adhocdeb.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Domain",
+                "fieldType" : "CONNECTOR",
+                "label" : "Domain",
+                "nativeName" : "Domain",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Source",
+                "fieldType" : "CONNECTOR",
+                "label" : "Source",
+                "nativeName" : "Source",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "PKey",
+                "fieldType" : "CONNECTOR",
+                "label" : "PKey",
+                "nativeName" : "PKey",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_addr1",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_addr1",
+                "nativeName" : "source_addr1",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_addr2",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_addr2",
+                "nativeName" : "source_addr2",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_addr3",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_addr3",
+                "nativeName" : "source_addr3",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_addr4",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_addr4",
+                "nativeName" : "source_addr4",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_city",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_city",
+                "nativeName" : "source_city",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_state",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_state",
+                "nativeName" : "source_state",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_postal_code",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_postal_code",
+                "nativeName" : "source_postal_code",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "source_country",
+                "fieldType" : "CONNECTOR",
+                "label" : "source_country",
+                "nativeName" : "source_country",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Prod_Ins_Src_Project_US_Adhocdeb.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2025-01-22T09:01:51.422Z",
+        "name" : "Target",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "useDynamicFileName" : "false",
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:24 PDT"
+}

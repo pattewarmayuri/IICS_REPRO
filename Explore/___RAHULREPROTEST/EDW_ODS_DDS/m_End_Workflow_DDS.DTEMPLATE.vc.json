@@ -1,0 +1,1084 @@
+{
+  "content" : {
+    "description" : "DATE CREATED:03-Sep-2013\nCREATED BY : SONAL GUDHKA\nDESC: This mapping updates EDW workflow instance status to successful or aborts it in case of  failure of any of the sessions.",
+    "allowMaxFieldLength" : "false",
+    "name" : "m_End_Workflow_DDS",
+    "specialCharacterSupport" : "false",
+    "flowOrderEntries" : [
+      {
+        "sourceTypes" : [
+          "Source"
+        ],
+        "sources" : [
+          "SQ_WKF_EXEC_ST"
+        ],
+        "targetTypes" : [
+          "Target"
+        ],
+        "targets" : [
+          "WKF_EXEC"
+        ]
+      },
+      {
+        "sourceTypes" : [
+          "Source"
+        ],
+        "sources" : [
+          "SQ_WKF_EXEC"
+        ],
+        "targetTypes" : [
+          "Target"
+        ],
+        "targets" : [
+          "DUMMY_FF"
+        ]
+      }
+    ],
+    "links" : [
+      {
+        "link" : "SQ_WKF_EXEC -> EXP_ABORT"
+      },
+      {
+        "link" : "EXP_DETERMINE_STATUS -> UPD_WKF_EXEC_ST"
+      },
+      {
+        "link" : "SQ_WKF_EXEC_ST -> EXP_DETERMINE_STATUS"
+      },
+      {
+        "link" : "UPD_WKF_EXEC_ST -> WKF_EXEC"
+      },
+      {
+        "link" : "EXP_ABORT -> _EXPR_DUMMY_FF"
+      },
+      {
+        "link" : "_EXPR_DUMMY_FF -> DUMMY_FF"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "WKF_EXECTgtParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "DUMMY_FFTgtParameter",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "DBConnection_METADATA",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "SQ_WKF_EXEC_STSrcParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "name" : "WKF_EXEC",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "WKF_EXEC_ST_NEW",
+                    "outputName" : "WKF_EXEC_ST"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Reject file directory",
+            "value" : "$PMBadFileDir\\"
+          },
+          {
+            "name" : "Reject filename",
+            "value" : "output1.bad"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : [
+          "WKF_EXEC_ID"
+        ],
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "MASTER_BATCH_ID"
+            },
+            "name" : "MASTER_BATCH_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID_PREV"
+            },
+            "name" : "WKF_EXEC_ID_PREV",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_STRT_TMS"
+            },
+            "name" : "WKF_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_END_TMS"
+            },
+            "name" : "WKF_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ST"
+            },
+            "name" : "WKF_EXEC_ST",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "WKF_EXEC",
+            "label" : "WKF_EXEC",
+            "path" : "WKF_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "MASTER_BATCH_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID_PREV",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ST",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : "|",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "NONE"
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Update"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "WKF_EXEC_ID",
+              "toField" : {
+                "name" : "WKF_EXEC_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_END_TMS",
+              "toField" : {
+                "name" : "WKF_EXEC_END_TMS"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_ST",
+              "toField" : {
+                "name" : "WKF_EXEC_ST"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "DUMMY_FF",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "OUT_ABORT_EXP_ABORT"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "No Header"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          },
+          {
+            "name" : "Output file directory",
+            "value" : "$PMSourceFileDir/DDS"
+          },
+          {
+            "name" : "Output filename",
+            "value" : "dummy_ff.out"
+          },
+          {
+            "name" : "Reject file directory",
+            "value" : "$PMBadFileDir\\"
+          },
+          {
+            "name" : "Reject filename",
+            "value" : "output1.bad"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "ABORT_MSG"
+            },
+            "name" : "ABORT_MSG",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1000,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@7ZW9griBjJ6cAzZiTNzyOh",
+          "connectionName" : "tr_flatfiles",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "DUMMY_FF",
+            "label" : "DUMMY_FF",
+            "path" : "DUMMY_FF",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "ABORT_MSG",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 1000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "DUMMY_FF"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "DUMMY_FF"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "NONE"
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "ABORT_MSG",
+              "toField" : {
+                "name" : "ABORT_MSG"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_WKF_EXEC",
+        "advancedProperties" : [
+          {
+            "name" : "Number Of Sorted Ports",
+            "value" : "0"
+          },
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Is Partitionable",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ST"
+            },
+            "name" : "WKF_EXEC_ST",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "select we.wkf_exec_id,we.wkf_exec_st from wkf_exec we \nwhere we.wkf_exec_id=(select max(wkf_exec_id) \nfrom wkf_exec we,wkf_master wm  where we.wkf_id=wm.wkf_id and  upper(wm.wkf_cd)=upper('$$PMWorkflowRunInstanceName'))",
+            "label" : "WKF_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ID",
+                "nativeName" : "WKF_EXEC_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "WKF_EXEC_ST",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ST",
+                "nativeName" : "WKF_EXEC_ST",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "DATE CREATED:10/23/2012\r\nCREATED BY : SONAL GUDHKA\r\nDESC: To abort this session in case of  failure of any previous sessions.\n",
+        "augmented" : "false",
+        "name" : "EXP_ABORT",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "WKF_EXEC_ST",
+                    "outputName" : "IN_WKF_EXEC_ST"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "OUT_ABORT",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1000,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "IIF(IN_WKF_EXEC_ST=3,ABORT('EDW Workflow Failed'))"
+          }
+        ]
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_WKF_EXEC_ST",
+        "advancedProperties" : [
+          {
+            "name" : "Number Of Sorted Ports",
+            "value" : "0"
+          },
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Is Partitionable",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "NOT_SUCCEEDED"
+            },
+            "name" : "NOT_SUCCEEDED",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 40,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "SELECT   A.WKF_EXEC_ID AS WKF_EXEC_ID,\nSUM(CASE WHEN B.SESS_EXEC_ST != '$$SESS_SUCCEEDED_STATUS' THEN 1 ELSE 0 END) AS NOT_SUCCEEDED\nFROM WKF_EXEC A, SESS_EXEC B, WKF_MASTER C\nWHERE\nC.WKF_ID = A.WKF_ID AND\nA.WKF_EXEC_ID = B.WKF_EXEC_ID AND\nUPPER(C.WKF_CD) = upper('$$PMWorkflowRunInstanceName') AND\n a.wkf_exec_st='$$WKF_STARTED_STATUS'\nGROUP BY \tA.WKF_EXEC_ID",
+            "label" : "WKF_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ID",
+                "nativeName" : "WKF_EXEC_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "NOT_SUCCEEDED",
+                "fieldType" : "CONNECTOR",
+                "label" : "NOT_SUCCEEDED",
+                "nativeName" : "NOT_SUCCEEDED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Original Description : DATE CREATED:03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: Flag the record of IN Progress workflow in WKF_EXEC table for Update.\nAdditional Info: Expression Tx is added in place of Update Strategy Transformation. Transformation attributes propagated to target..",
+        "augmented" : "false",
+        "name" : "UPD_WKF_EXEC_ST",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_NOT_SUCCEEDED"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "Update_Strategy_Expression_95898",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "DD_UPDATE"
+          }
+        ]
+      },
+      {
+        "description" : "DATE CREATED:03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: To determine workflow status \n",
+        "augmented" : "false",
+        "name" : "EXP_DETERMINE_STATUS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "NOT_SUCCEEDED",
+                    "outputName" : "IN_NOT_SUCCEEDED"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "WKF_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SYSDATE"
+          },
+          {
+            "name" : "WKF_EXEC_ST_NEW",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "// If there is more then one session not ended succesfully\r\nIIF(IN_NOT_SUCCEEDED <> 0, \r\n// Set status for workflow to not successful, status 3\r\n$$WKF_FAILED_STATUS, \r\n// Else set status to successful, status 2\r\n$$WKF_SUCCEEDED_STATUS\r\n// End if\r\n)"
+          }
+        ]
+      },
+      {
+        "description" : "This is a helper expression for DUMMY_FF, used to resolve the name conflicts. \n",
+        "augmented" : "false",
+        "name" : "_EXPR_DUMMY_FF",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "EXP_ABORT",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(OUT_ABORT)$/$0_EXP_ABORT",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_WKF_EXEC_ST"
+                  },
+                  {
+                    "inputName" : "WKF_EXEC_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "ABORT_MSG",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1000,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "OUT_ABORT_EXP_ABORT"
+          }
+        ]
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_STARTED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_SUCCEEDED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_FAILED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "SESS_SUCCEEDED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "PMWorkflowRunInstanceName",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:25 PDT"
+}

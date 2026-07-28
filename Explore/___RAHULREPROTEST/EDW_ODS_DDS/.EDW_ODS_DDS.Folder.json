@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "19EbM5GDS5Clye5NzEoGKH",
+    "name" : "EDW_ODS_DDS",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Created for  DDS data on 3rd APR 2014",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-07-28T11:26:28.427Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

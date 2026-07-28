@@ -1,0 +1,2916 @@
+{
+  "content" : {
+    "description" : "Date_created: 03-Sep-2013\nCreated_By: Sonal Gudhka\nDesc:  This mapping Initializes EDW workflow instance, creates the basic metadata for all sessions in a workflow with an Initialized status and prepares the parameter file to be used by other sessions in the workflow",
+    "allowMaxFieldLength" : "false",
+    "name" : "m_Prepare_Workflow_and_Parameter_File_DDS",
+    "specialCharacterSupport" : "false",
+    "flowOrderEntries" : [
+      {
+        "sourceTypes" : [
+          "Source"
+        ],
+        "sources" : [
+          "SQ_GET_WKF_EXEC_RECORDS"
+        ],
+        "targetTypes" : [
+          "Target"
+        ],
+        "targets" : [
+          "WKF_EXEC"
+        ]
+      },
+      {
+        "sourceTypes" : [
+          "Source"
+        ],
+        "sources" : [
+          "SQ_GET_SUB_SESSIONS"
+        ],
+        "targetTypes" : [
+          "Target"
+        ],
+        "targets" : [
+          "SESS_EXEC"
+        ]
+      },
+      {
+        "sourceTypes" : [
+          "Source"
+        ],
+        "sources" : [
+          "SQ_SESS_PARM"
+        ],
+        "targetTypes" : [
+          "Target"
+        ],
+        "targets" : [
+          "PARAMETER_FILE"
+        ]
+      }
+    ],
+    "links" : [
+      {
+        "link" : "SRT_SESS_ID -> EXP_GENERATE_PARAMETERS"
+      },
+      {
+        "link" : "LKP_GET_PRE_AND_CURR_START_DATE -> EXP_GENERATE_PARAMETERS"
+      },
+      {
+        "link" : "SQ_SESS_PARM -> SRT_SESS_ID"
+      },
+      {
+        "link" : "SQ_GET_SUB_SESSIONS -> LKP_GET_PREV_SESS_STRT_END_DATE"
+      },
+      {
+        "link" : "LKP_GET_PREV_SESS_STRT_END_DATE -> EXP_CREATE_INITIAL_RECORDS"
+      },
+      {
+        "link" : "SQ_GET_SUB_SESSIONS -> EXP_CREATE_INITIAL_RECORDS"
+      },
+      {
+        "link" : "SRT_SESS_ID -> LKP_GET_PRE_AND_CURR_START_DATE"
+      },
+      {
+        "link" : "SQ_GET_WKF_EXEC_RECORDS -> EXP_DETERMINE_STATUS"
+      },
+      {
+        "link" : "LKP_GET_MASTER_BATCH_ID -> EXP_DETERMINE_STATUS"
+      },
+      {
+        "link" : "SQ_GET_WKF_EXEC_RECORDS -> LKP_GET_MASTER_BATCH_ID"
+      },
+      {
+        "link" : "EXP_DETERMINE_STATUS -> WKF_EXEC"
+      },
+      {
+        "link" : "Shortcut_to_SEQ_WKF_EXEC_ID -> WKF_EXEC"
+      },
+      {
+        "link" : "EXP_GENERATE_PARAMETERS -> _EXPR_PARAMETER_FILE"
+      },
+      {
+        "link" : "_EXPR_PARAMETER_FILE -> PARAMETER_FILE"
+      },
+      {
+        "link" : "EXP_CREATE_INITIAL_RECORDS -> SESS_EXEC"
+      },
+      {
+        "link" : "Shortcut_to_SEQ_SESS_EXEC_ID -> SESS_EXEC"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "WKF_EXECTgtParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "PARAMETER_FILETgtParameter",
+        "anonymousType" : {
+          "typeSystem" : "CSVFile",
+          "connectionType" : "CSVFile"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "SESS_EXECTgtParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "LKP_GET_PREV_SESS_STRT_END_DATELookupParameter"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "SQ_GET_SUB_SESSIONSSrcParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "SQ_SESS_PARMSrcParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "SQ_GET_WKF_EXEC_RECORDSSrcParameter",
+        "anonymousType" : {
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "LKP_GET_PRE_AND_CURR_START_DATELookupParameter"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "LKP_GET_MASTER_BATCH_IDLookupParameter"
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "DBConnection_METADATA",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      },
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "true",
+        "expressionVariable" : "false",
+        "name" : "DBConnection_Target",
+        "anonymousType" : {
+          "typeSystem" : "Oracle",
+          "connectionType" : "Oracle"
+        }
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "name" : "WKF_EXEC",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "CURRVAL"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "OUT_WKF_EXEC_STRT_TMS",
+                    "outputName" : "WKF_EXEC_STRT_TMS"
+                  },
+                  {
+                    "inputName" : "OUT_WKF_STARTED_STATUS",
+                    "outputName" : "WKF_EXEC_ST"
+                  },
+                  {
+                    "inputName" : "LKP_MASTER_BATCH_ID",
+                    "outputName" : "MASTER_BATCH_ID"
+                  },
+                  {
+                    "inputName" : "NEXTVAL",
+                    "outputName" : "WKF_EXEC_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Reject file directory",
+            "value" : "$PMBadFileDir\\"
+          },
+          {
+            "name" : "Reject filename",
+            "value" : "output1.bad"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "MASTER_BATCH_ID"
+            },
+            "name" : "MASTER_BATCH_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID_PREV"
+            },
+            "name" : "WKF_EXEC_ID_PREV",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_STRT_TMS"
+            },
+            "name" : "WKF_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_END_TMS"
+            },
+            "name" : "WKF_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ST"
+            },
+            "name" : "WKF_EXEC_ST",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "WKF_EXEC",
+            "label" : "WKF_EXEC",
+            "path" : "WKF_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "MASTER_BATCH_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID_PREV",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ST",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "WKF_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "WKF_EXEC"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : "|",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "NONE"
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "WKF_EXEC_STRT_TMS",
+              "toField" : {
+                "name" : "WKF_EXEC_STRT_TMS"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_ST",
+              "toField" : {
+                "name" : "WKF_EXEC_ST"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_ID",
+              "toField" : {
+                "name" : "WKF_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_ID_PREV",
+              "toField" : {
+                "name" : "WKF_EXEC_ID_PREV"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "MASTER_BATCH_ID",
+              "toField" : {
+                "name" : "MASTER_BATCH_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_ID",
+              "toField" : {
+                "name" : "WKF_EXEC_ID"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "PARAMETER_FILE",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "OUT_GENERATE_PARAMETER_STRING_EXP_GENERATE_PARAMETERS"
+                  },
+                  {
+                    "inputName" : "WKF_FLD"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "No Header"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          },
+          {
+            "name" : "Output file directory",
+            "value" : "$PMSourceFileDir/DDS"
+          },
+          {
+            "name" : "Reject file directory",
+            "value" : "$PMBadFileDir\\"
+          },
+          {
+            "name" : "Reject filename",
+            "value" : "output1.bad"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@7ZW9griBjJ6cAzZiTNzyOh",
+          "connectionName" : "tr_flatfiles",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "true",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "$$PMWorkflowRunInstanceName || '.prm'",
+            "label" : "$$PMWorkflowRunInstanceName || '.prm'",
+            "path" : "$$PMWorkflowRunInstanceName || '.prm'",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "none"
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "SESS_EXEC",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "CURRVAL"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Reject file directory",
+            "value" : "$PMRootDir\\BadFiles\\DDS\\"
+          },
+          {
+            "name" : "Reject filename",
+            "value" : "$PMSessionName_SESS_EXEC_$PMWorkflowRunId.bad"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_ID"
+            },
+            "name" : "SESS_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_ID"
+            },
+            "name" : "SESS_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_STRT_TMS"
+            },
+            "name" : "SESS_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_END_TMS"
+            },
+            "name" : "SESS_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_PREV_SCSS_EXEC_STRT_TMS"
+            },
+            "name" : "SESS_PREV_SCSS_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_PREV_SCSS_EXEC_END_TMS"
+            },
+            "name" : "SESS_PREV_SCSS_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 26,
+            "scale" : 6
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_ST"
+            },
+            "name" : "SESS_EXEC_ST",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SRC_ROWS"
+            },
+            "name" : "SRC_ROWS",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "TGT_ROWS"
+            },
+            "name" : "TGT_ROWS",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ERR_ROWS"
+            },
+            "name" : "ERR_ROWS",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "SESS_EXEC",
+            "label" : "SESS_EXEC",
+            "path" : "SESS_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "SESS_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_PREV_SCSS_EXEC_STRT_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_PREV_SCSS_EXEC_END_TMS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 26,
+                "scale" : 6,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_ST",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SRC_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "TGT_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "ERR_ROWS",
+                "fieldType" : "UNDEFINED",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObjectLabel",
+                    "value" : "SESS_EXEC"
+                  },
+                  {
+                    "name" : "parentLabel",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : "|",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "NONE"
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "OUT_SESS_INIT_STATUS",
+              "toField" : {
+                "name" : "SESS_EXEC_ST"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "NEXTVAL",
+              "toField" : {
+                "name" : "SESS_EXEC_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "OUT_SESS_EXEC_STRT_TMS",
+              "toField" : {
+                "name" : "SESS_EXEC_STRT_TMS"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "WKF_EXEC_IDSQ_GET_SUB_SESSIONS",
+              "toField" : {
+                "name" : "WKF_EXEC_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "SESS_IDSQ_GET_SUB_SESSIONS",
+              "toField" : {
+                "name" : "SESS_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "SESS_EXEC_STRT_TMSLKP_GET_PREV_SESS_STRT_END_DATE",
+              "toField" : {
+                "name" : "SESS_PREV_SCSS_EXEC_STRT_TMS"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "SESS_EXEC_END_TMSLKP_GET_PREV_SESS_STRT_END_DATE",
+              "toField" : {
+                "name" : "SESS_PREV_SCSS_EXEC_END_TMS"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: to generate Parameter file for each workflow run instance\n",
+        "augmented" : "false",
+        "name" : "EXP_GENERATE_PARAMETERS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "SRT_SESS_ID",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(WKF_ID)$/$0_SRT_SESS_ID",
+                    "suffix" : "false"
+                  }
+                }
+              },
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "LKP_GET_PRE_AND_CURR_START_DATE",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(WKF_ID|IN_WKF_ID)$/$0_LKP_GET_PRE_AND_CURR_START_DATE",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_WKF_ID_LKP_GET_PRE_AND_CURR_START_DATE"
+                  },
+                  {
+                    "inputName" : "WKF_ID_LKP_GET_PRE_AND_CURR_START_DATE"
+                  },
+                  {
+                    "inputName" : "WKF_FLD"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "PARM_CD",
+                    "outputName" : "IN_PARM_CD"
+                  },
+                  {
+                    "inputName" : "PARM_VAL",
+                    "outputName" : "IN_PARM_VAL"
+                  },
+                  {
+                    "inputName" : "WKF_EXEC_ID",
+                    "outputName" : "IN_WKF_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "SESS_ID",
+                    "outputName" : "IN_SESS_ID"
+                  },
+                  {
+                    "inputName" : "SESS_CD",
+                    "outputName" : "IN_SESS_CD"
+                  },
+                  {
+                    "inputName" : "SESS_EXEC_ID",
+                    "outputName" : "IN_SESS_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "WKF_ID_SRT_SESS_ID",
+                    "outputName" : "IN_WKF_ID"
+                  },
+                  {
+                    "inputName" : "CURR_EXEC_START_DATE",
+                    "outputName" : "LKP_CURR_EXEC_START_DATE"
+                  },
+                  {
+                    "inputName" : "PRE_EXEC_START_DATE",
+                    "outputName" : "LKP_PRE_EXEC_START_DATE"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "V_CHECK_HEADER",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "IIF(V_HEADER = IN_SESS_CD, 0, 1)"
+          },
+          {
+            "name" : "V_HEADER",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "IIF(V_CHECK_HEADER = 0, V_HEADER, IN_SESS_CD)"
+          },
+          {
+            "name" : "OUT_GENERATE_PARAMETER_STRING",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "--IIF(V_CHECK_HEADER = 1,\n--'[' || IN_SESS_CD || ']' || chr(13)||chr(10),NULL)|| \nIN_PARM_CD || '=' ||\nIIF(IN_PARM_VAL = 'SESS_ID', TO_CHAR(IN_SESS_ID),\nIIF((IN_PARM_VAL = 'SESS_EXEC_ID' ), TO_CHAR(IN_SESS_EXEC_ID),\nIIF(IN_PARM_VAL = 'WKF_EXEC_ID', TO_CHAR(IN_WKF_EXEC_ID),\nIIF(IN_PARM_VAL = '$curr_exec_start_date', TO_CHAR(LKP_CURR_EXEC_START_DATE, 'MM/DD/YYYY HH:MI:SS AM'),\nIIF(IN_PARM_VAL = '$pre_exec_start_date', TO_CHAR(LKP_PRE_EXEC_START_DATE, 'MM/DD/YYYY HH:MI:SS AM'),\n IN_PARM_VAL)))))"
+          }
+        ]
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: To sort parameters in ascending order by session_name\n",
+        "augmented" : "false",
+        "name" : "SRT_SESS_ID",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          },
+          {
+            "name" : "Sorter Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Case Sensitive",
+            "value" : "true"
+          },
+          {
+            "name" : "Work Directory",
+            "value" : "$PMTempDir"
+          },
+          {
+            "name" : "Distinct",
+            "value" : "false"
+          },
+          {
+            "name" : "Null Treated Low",
+            "value" : "false"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "All Input"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "true",
+            "fieldName" : "SESS_CD"
+          }
+        ]
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: To fetch Start and End Time of previous successful session execution from SESS_EXEC\n",
+        "augmented" : "false",
+        "name" : "LKP_GET_PREV_SESS_STRT_END_DATE",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup Sql Override",
+            "value" : "select se.sess_id as sess_id,max(se.sess_exec_strt_tms) as SESS_EXEC_STRT_TMS,\nmax(se.sess_exec_end_tms)  as SESS_EXEC_END_TMS from sess_exec se where se.sess_exec_st=2 group by sess_id"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMRootDir\\cache\\DDS\\"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "SESS_ID",
+                    "outputName" : "IN_SESS_ID"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "WKF_EXEC_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Report Error",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SESS_ID"
+            },
+            "name" : "SESS_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_STRT_TMS"
+            },
+            "name" : "SESS_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_END_TMS"
+            },
+            "name" : "SESS_EXEC_END_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "inputPortNames" : [
+          "IN_SESS_ID"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "SESS_ID",
+            "operator" : "=",
+            "rightOperand" : "IN_SESS_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "SESS_EXEC",
+            "label" : "SESS_EXEC",
+            "objectName" : "SESS_EXEC",
+            "path" : "SESS_EXEC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "SESS_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_ID",
+                "nativeName" : "SESS_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_STRT_TMS",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_EXEC_STRT_TMS",
+                "nativeName" : "SESS_EXEC_STRT_TMS",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              },
+              {
+                "name" : "SESS_EXEC_END_TMS",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_EXEC_END_TMS",
+                "nativeName" : "SESS_EXEC_END_TMS",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SESS_EXEC"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_GET_SUB_SESSIONS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SESS_ID"
+            },
+            "name" : "SESS_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "SELECT B.SESS_ID AS SESS_ID\n,  C.WKF_EXEC_ID AS WKF_EXEC_ID\nFROM wkf_master A\ninner join sess_master B  ON  A.WKF_ID = B.WKF_ID \ninner join WKF_EXEC C  on A.WKF_ID = C.WKF_ID\nwhere\nC.WKF_EXEC_ST = '$$WKF_STARTED_STATUS' and\n  TO_CHAR(C.WKF_EXEC_STRT_TMS,'YYYY-MM-DD HH24:MI:SS') ='$$$SESSSTARTTIME' AND upper( A.WKF_CD) = upper('$$PMWorkflowRunInstanceName')",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "SESS_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_ID",
+                "nativeName" : "SESS_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ID",
+                "nativeName" : "WKF_EXEC_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_SESS_PARM",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_ID"
+            },
+            "name" : "SESS_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PARM_CD"
+            },
+            "name" : "PARM_CD",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PARM_VAL"
+            },
+            "name" : "PARM_VAL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID"
+            },
+            "name" : "WKF_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_CD"
+            },
+            "name" : "SESS_CD",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SESS_EXEC_ID"
+            },
+            "name" : "SESS_EXEC_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 40,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "SELECT WKF_MASTER.WKF_ID, SESS_MASTER.SESS_ID, SESS_PARM.PARM_CD, SESS_PARM.PARM_VAL, WKF_EXEC.WKF_EXEC_ID, SESS_MASTER.SESS_CD, SESS_EXEC.SESS_EXEC_ID, WKF_MASTER.WKF_FLD\nFROM\n SESS_PARM, SESS_MASTER, SESS_EXEC, WKF_EXEC ,WKF_MASTER\nWHERE\nWKF_MASTER.WKF_ID = WKF_EXEC.WKF_ID\nAND SESS_EXEC.WKF_EXEC_ID = WKF_EXEC.WKF_EXEC_ID\nAND WKF_MASTER.WKF_ID = SESS_MASTER.wkf_ID\nAND SESS_MASTER.SESS_ID = SESS_EXEC.SESS_ID\nAND SESS_PARM.SESS_ID = SESS_MASTER.SESS_ID\nAND upper(WKF_MASTER.WKF_CD) =  upper('$$PMWorkflowRunInstanceName')\nAND WKF_EXEC.WKF_EXEC_ST = '$$WKF_STARTED_STATUS'\nAND  TO_CHAR(WKF_EXEC.WKF_EXEC_STRT_TMS,'YYYY-MM-DD HH24:MI:SS') ='$$$SESSSTARTTIME'\n\nUnion \nSELECT WKF_MASTER.WKF_ID,SESS_MASTER.SESS_ID, \nSESS_PARM.PARM_CD, \nSESS_PARM.PARM_VAL, \nNull, \nSESS_MASTER.SESS_CD, \nnull,\nWKF_MASTER.WKF_FLD\nFROM\nSESS_PARM, SESS_MASTER, WKF_MASTER\nwhere \nWKF_MASTER.WKF_ID = SESS_MASTER.wkf_ID\nAND SESS_PARM.SESS_ID = SESS_MASTER.SESS_ID\nAND WKF_MASTER.WKF_CD = '$$GLOBAL_WF_NAME'",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_ID",
+                "nativeName" : "WKF_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "SESS_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_ID",
+                "nativeName" : "SESS_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "PARM_CD",
+                "fieldType" : "CONNECTOR",
+                "label" : "PARM_CD",
+                "nativeName" : "PARM_CD",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0
+              },
+              {
+                "name" : "PARM_VAL",
+                "fieldType" : "CONNECTOR",
+                "label" : "PARM_VAL",
+                "nativeName" : "PARM_VAL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 4000,
+                "scale" : 0
+              },
+              {
+                "name" : "WKF_EXEC_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ID",
+                "nativeName" : "WKF_EXEC_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0
+              },
+              {
+                "name" : "SESS_CD",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_CD",
+                "nativeName" : "SESS_CD",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0
+              },
+              {
+                "name" : "SESS_EXEC_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SESS_EXEC_ID",
+                "nativeName" : "SESS_EXEC_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "name" : "SQ_GET_WKF_EXEC_RECORDS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Output is repeatable",
+            "value" : "Never"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 39,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_EXEC_ID_PREV"
+            },
+            "name" : "WKF_EXEC_ID_PREV",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 40,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@aJsZFCZJAOdcDZ3dAdhWK7",
+          "connectionName" : "EDW_ETLMETA_REP",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "QUERY",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "customQuery" : "SELECT A.WKF_ID AS WKF_ID,\n\tMAX(B.WKF_EXEC_ID) AS WKF_EXEC_ID_PREV\nFROM WKF_MASTER A\nLEFT OUTER JOIN WKF_EXEC B ON\n\tA.WKF_ID = B.WKF_ID AND\n\tB.WKF_EXEC_ST = '$$WKF_SUCCEEDED_STATUS'\nWHERE upper(A.WKF_CD) =  upper('$$PMWorkflowRunInstanceName')\nGROUP BY A.WKF_ID",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_ID",
+                "nativeName" : "WKF_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 39,
+                "scale" : 0
+              },
+              {
+                "name" : "WKF_EXEC_ID_PREV",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_EXEC_ID_PREV",
+                "nativeName" : "WKF_EXEC_ID_PREV",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC:  To initialize all sessions of a particular workflow run instance\n",
+        "augmented" : "false",
+        "name" : "EXP_CREATE_INITIAL_RECORDS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "LKP_GET_PREV_SESS_STRT_END_DATE",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "LKP_GET_PREV_SESS_STRT_END_DATE",
+                    "suffix" : "true"
+                  }
+                }
+              },
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "SQ_GET_SUB_SESSIONS",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "SQ_GET_SUB_SESSIONS",
+                    "suffix" : "true"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "SESS_EXEC_END_TMSLKP_GET_PREV_SESS_STRT_END_DATE"
+                  },
+                  {
+                    "inputName" : "SESS_IDSQ_GET_SUB_SESSIONS"
+                  },
+                  {
+                    "inputName" : "WKF_EXEC_IDSQ_GET_SUB_SESSIONS"
+                  },
+                  {
+                    "inputName" : "SESS_EXEC_STRT_TMSLKP_GET_PREV_SESS_STRT_END_DATE"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "OUT_SESS_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SESSSTARTTIME"
+          },
+          {
+            "name" : "OUT_SESS_INIT_STATUS",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$SESS_INIT_STATUS"
+          }
+        ]
+      },
+      {
+        "description" : "DATE CREATED:11/07/2013\r\nCREATED BY : Chetna Talande\r\nDESC: To Fetch PRE_EXEC_START_DATE and CURR_EXEC_START_DATE from DDS_Control table\n",
+        "augmented" : "false",
+        "name" : "LKP_GET_PRE_AND_CURR_START_DATE",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup Sql Override",
+            "value" : "select max(t.curr_exec_start_date) AS \"curr_exec_start_date\",max(t.pre_exec_start_date) AS \"pre_exec_start_date\",t.wkf_id AS \"WKF_ID\" \n from dds_control t  group by t.wkf_id--"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMRootDir\\cache\\ODS\\"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Null ordering",
+            "value" : "Null Is Highest Value"
+          },
+          {
+            "name" : "Case Sensitive String Comparison",
+            "value" : "false"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "PARM_CD"
+                  },
+                  {
+                    "inputName" : "PARM_VAL"
+                  },
+                  {
+                    "inputName" : "SESS_CD"
+                  },
+                  {
+                    "inputName" : "SESS_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "SESS_ID"
+                  },
+                  {
+                    "inputName" : "WKF_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "WKF_FLD"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "WKF_ID",
+                    "outputName" : "IN_WKF_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Report Error",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRE_EXEC_START_DATE"
+            },
+            "name" : "PRE_EXEC_START_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CURR_EXEC_START_DATE"
+            },
+            "name" : "CURR_EXEC_START_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "inputPortNames" : [
+          "IN_WKF_ID"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "WKF_ID",
+            "operator" : "=",
+            "rightOperand" : "IN_WKF_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "DDS_CONTROL",
+            "label" : "DDS_CONTROL",
+            "objectName" : "DDS_CONTROL",
+            "path" : "DDS_CONTROL",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "PRE_EXEC_START_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRE_EXEC_START_DATE",
+                "nativeName" : "PRE_EXEC_START_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DDS_CONTROL"
+                  }
+                ]
+              },
+              {
+                "name" : "CURR_EXEC_START_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CURR_EXEC_START_DATE",
+                "nativeName" : "CURR_EXEC_START_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DDS_CONTROL"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_ID",
+                "nativeName" : "WKF_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DDS_CONTROL"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Date_created: 03-Sep-2013\r\nCREATED BY : SONAL GUDHKA\r\nDESC: To assign workflow run instance status as IN PROGRESS(2)\n",
+        "augmented" : "false",
+        "name" : "EXP_DETERMINE_STATUS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "SQ_GET_WKF_EXEC_RECORDS",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(WKF_ID)$/$0_SQ_GET_WKF_EXEC_RECORDS",
+                    "suffix" : "false"
+                  }
+                }
+              },
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "LKP_GET_MASTER_BATCH_ID",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(WKF_ID)$/$0_LKP_GET_MASTER_BATCH_ID",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_WKF_ID"
+                  },
+                  {
+                    "inputName" : "WKF_ID_LKP_GET_MASTER_BATCH_ID"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "WKF_ID_SQ_GET_WKF_EXEC_RECORDS",
+                    "outputName" : "WKF_ID"
+                  },
+                  {
+                    "inputName" : "MASTER_BATCH_ID",
+                    "outputName" : "LKP_MASTER_BATCH_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "OUT_WKF_EXEC_STRT_TMS",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SESSSTARTTIME"
+          },
+          {
+            "name" : "OUT_WKF_STARTED_STATUS",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "$$WKF_STARTED_STATUS"
+          }
+        ]
+      },
+      {
+        "description" : "DATE CREATED:11/07/2013\r\nCREATED BY : Chetna Talande\r\nDESC: To Fetch Master_Batch_ID from DDS_Control table\n",
+        "augmented" : "false",
+        "name" : "LKP_GET_MASTER_BATCH_ID",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup Sql Override",
+            "value" : "select max(t.master_batch_id) AS \"master_batch_id\",t.wkf_id AS \"WKF_ID\" \n from dds_control t  group by t.wkf_id--"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMRootDir\\cache\\ODS\\"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Null ordering",
+            "value" : "Null Is Highest Value"
+          },
+          {
+            "name" : "Case Sensitive String Comparison",
+            "value" : "false"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "WKF_EXEC_ID_PREV"
+                  }
+                ]
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "WKF_ID",
+                    "outputName" : "IN_WKF_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Report Error",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "MASTER_BATCH_ID"
+            },
+            "name" : "MASTER_BATCH_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WKF_ID"
+            },
+            "name" : "WKF_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : [
+          "IN_WKF_ID"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "WKF_ID",
+            "operator" : "=",
+            "rightOperand" : "IN_WKF_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId$" : {
+            "name" : "DBConnection_METADATA"
+          },
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Oracle",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "DDS_CONTROL",
+            "label" : "DDS_CONTROL",
+            "objectName" : "DDS_CONTROL",
+            "path" : "DDS_CONTROL",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "MASTER_BATCH_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "MASTER_BATCH_ID",
+                "nativeName" : "MASTER_BATCH_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DDS_CONTROL"
+                  }
+                ]
+              },
+              {
+                "name" : "WKF_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "WKF_ID",
+                "nativeName" : "WKF_ID",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DDS_CONTROL"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Date_created: 18/10/2012\r\nCreated_By: Sonal Gudhka\r\nDesc:  to generate unique SESS_EXEC_ID for every execution of a session in a workflow\n",
+        "augmented" : "false",
+        "name" : "Shortcut_to_SEQ_SESS_EXEC_ID",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "9587872",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "1000",
+          "reset" : "false",
+          "sharedSequenceId" : "@4Q292ysg2hOkaa6QgNJQCc",
+          "sharedSequenceName" : "SEQ_SESS_EXEC_ID",
+          "startValue" : "0",
+          "useSharedSequence" : "true"
+        }
+      },
+      {
+        "description" : "Date_created: 18/10/2012\r\nCreated_By: Sonal Gudhka\r\nDesc:  To generate unique WKF_EXEC_ID for every execution of a  workflow\n",
+        "augmented" : "false",
+        "name" : "Shortcut_to_SEQ_WKF_EXEC_ID",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "6990038",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "1000",
+          "reset" : "false",
+          "sharedSequenceId" : "@hYkWCBdr4KWiLZCxBLTG4i",
+          "sharedSequenceName" : "SEQ_WKF_EXEC_ID",
+          "startValue" : "0",
+          "useSharedSequence" : "true"
+        }
+      },
+      {
+        "description" : "This is a helper expression for PARAMETER_FILE, used to resolve the name conflicts. \n",
+        "augmented" : "false",
+        "name" : "_EXPR_PARAMETER_FILE",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "EXP_GENERATE_PARAMETERS",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "pattern" : "^(OUT_GENERATE_PARAMETER_STRING)$/$0_EXP_GENERATE_PARAMETERS",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              },
+              {
+                "bulkRename" : "false",
+                "include" : "false",
+                "names" : [
+                  {
+                    "inputName" : "IN_WKF_ID"
+                  },
+                  {
+                    "inputName" : "IN_SESS_ID"
+                  },
+                  {
+                    "inputName" : "IN_PARM_CD"
+                  },
+                  {
+                    "inputName" : "IN_PARM_VAL"
+                  },
+                  {
+                    "inputName" : "IN_WKF_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "IN_SESS_CD"
+                  },
+                  {
+                    "inputName" : "IN_SESS_EXEC_ID"
+                  },
+                  {
+                    "inputName" : "LKP_CURR_EXEC_START_DATE"
+                  },
+                  {
+                    "inputName" : "LKP_PRE_EXEC_START_DATE"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "PARAMETER_LINE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "OUT_GENERATE_PARAMETER_STRING_EXP_GENERATE_PARAMETERS"
+          }
+        ]
+      }
+    ],
+    "variables" : [
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_STARTED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "WKF_SUCCEEDED_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "SESS_INIT_STATUS",
+        "platformType" : {
+          "name" : "integer"
+        },
+        "precision" : 10,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "GLOBAL_WF_NAME",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 100,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      },
+      {
+        "aggregationType" : "MAX",
+        "expressionVariable" : "false",
+        "name" : "PMWorkflowRunInstanceName",
+        "platformType" : {
+          "name" : "string"
+        },
+        "precision" : 50,
+        "retentionPolicy" : "NEVER",
+        "scale" : 0
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-07-28 04:26:27 PDT"
+}
