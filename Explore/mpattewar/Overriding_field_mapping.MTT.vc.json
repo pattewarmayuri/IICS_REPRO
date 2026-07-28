@@ -1,0 +1,206 @@
+{
+  "name" : "Overriding_field_mapping",
+  "runtimeEnvironmentId" : "@5dffDbOOI5DblXRwAWecCM",
+  "runtimeEnvironmentName" : "_1_1_1_Mayuri_Linux_01",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Source$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "Src_Conn",
+      "uiProperties" : {
+        "cnxtype" : "Oracle",
+        "connectionParameterized" : "true",
+        "paramName" : "Src_Conn",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Src_Conn",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objlabel" : "Src_Obj",
+        "objectParameterized" : "true",
+        "objectParamName" : "Src_Obj",
+        "objectParamType-mapping" : "DataObject",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "Source"
+      },
+      "sourceConnectionId" : "@2A1WY95yfcXcz0TZJIVDwD",
+      "connectionName" : "inpattewar01_Oracla_INGKDBORA19C",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "MED_CASE",
+          "label" : "MED_CASE",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "MED_CASE",
+            "label" : "MED_CASE",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Src_Conn",
+        "objectParameterName" : "Src_Obj",
+        "objectDefaultValue" : "MED_CASE",
+        "connectionRuntimeParameter" : true,
+        "objectRuntimeParameter" : true
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$Target$",
+      "type" : "TARGET",
+      "label" : "Trg_Conn",
+      "uiProperties" : {
+        "cnxtype" : "Oracle",
+        "connectionParameterized" : "true",
+        "paramName" : "Trg_Conn",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "Trg_Conn",
+        "objlabel" : "Trg_Obj",
+        "objectParameterized" : "true",
+        "objectParamName" : "Trg_Obj",
+        "objectParamType-mapping" : "DataObject",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "fieldMappingParameterized" : "true",
+        "supportApplyDDLChanges" : "false",
+        "originalPath" : "Target"
+      },
+      "targetConnectionId" : "@2A1WY95yfcXcz0TZJIVDwD",
+      "connectionName" : "inpattewar01_Oracla_INGKDBORA19C",
+      "targetObject" : "MED_REPRO",
+      "targetObjectLabel" : "MED_REPRO",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "MED_REPRO",
+      "objectLabel" : "MED_REPRO",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionParameterName" : "Trg_Conn",
+        "objectParameterName" : "Trg_Obj",
+        "objectDefaultValue" : "MED_REPRO",
+        "connectionRuntimeParameter" : true,
+        "objectRuntimeParameter" : true
+      },
+      "targetSchemaProviderType" : "SELECTED_OBJECT",
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$FM$",
+      "type" : "STRING",
+      "text" : "string (1, 0) ALERT=ALERT;",
+      "label" : "FM",
+      "uiProperties" : {
+        "paramName" : "FM",
+        "paramType-mapping" : "FieldMapping",
+        "paramtype" : "Fieldmap",
+        "supressFieldmappingSuffix" : "true",
+        "lefttitle" : "Incoming Fields",
+        "righttitle" : "Target Fields",
+        "isPwxMultiGroupFieldMapping" : "false",
+        "objlabel" : "Target Field Group:",
+        "originalPath" : "Target"
+      },
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1740464368000,
+  "mappingId" : "@1DP4tfHcmHLjtZUW57EVEo",
+  "mappingTemplateName" : "Overriding_field_mapping",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Fallback Option",
+      "value" : "Partial PDO"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : false,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-09-26 11:18:50 IST"
+}
