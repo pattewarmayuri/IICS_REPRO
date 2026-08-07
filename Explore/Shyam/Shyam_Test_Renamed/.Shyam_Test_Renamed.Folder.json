@@ -1,7 +1,7 @@
 {
   "objectInfo" : {
     "id" : "6Ta53m5hEieduN0PooTaMg",
-    "name" : "Shyam_Test",
+    "name" : "Shyam_Test_Renamed",
     "type" : "Folder",
     "metadata" : {
       "modelVersion" : {
@@ -18,7 +18,7 @@
     }
   },
   "dataFileExtension" : "json",
-  "updateTime" : "2026-08-07T12:13:30.066Z",
+  "updateTime" : "2026-08-07T12:14:55.345Z",
   "objectRefs" : [ ],
   "readableFileExtension" : null,
   "readableFilePresent" : false
